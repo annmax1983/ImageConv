@@ -25,19 +25,39 @@ Most image conversion tools require uploading your files to a remote server. Ima
 
 ## Features
 
+### Free Features
+
 | Feature | Description |
 |---------|-------------|
-| 🖼️ **4 Formats** | Convert to PNG (lossless), JPG (high quality), WEBP (compact), or AVIF (best compression) |
-| 📋 **Copy to Clipboard** | Right-click → Copy as PNG/JPG/WEBP/AVIF — paste directly into emails, chats, documents |
+| 🖼️ **Right-Click Conversion** | Convert any webpage image to PNG, JPG, WEBP, or AVIF via context menu |
+| 📋 **Copy to Clipboard** | Right-click → Copy as PNG/JPG/WEBP/AVIF — paste into emails, chats, documents |
 | 📊 **File Size Comparison** | Toast notification shows original vs converted size with savings percentage |
 | 🎚️ **Adjustable Quality** | Fine-tune export quality for JPG, WEBP, and AVIF via sliders in the popup |
-| 🔗 **Smart Link Cleaning** | Strips CDN tracking parameters (`w=`, `h=`, `format=`, `watermark=`, etc.) to fetch original images |
-| 📁 **Drag & Drop** | Drop local image files onto the popup to convert without right-clicking |
-| 🌐 **Cross-Origin Support** | Fetches images from any website via Service Worker — handles cross-origin resources internally |
-| 🔤 **6-Language i18n** | Context menu and UI auto-match your browser language (EN/ES/DE/JA/FR/ZH-CN) |
+| 🔗 **Smart Link Cleaning** | Strips CDN tracking parameters to fetch original images |
+| 🌐 **Cross-Origin Support** | Fetches images from any website via Service Worker |
+| 🔤 **6-Language i18n** | Context menu and UI auto-match your browser language |
 | 🛡️ **JPG White Fill** | Automatically fills transparent backgrounds with white when converting PNG → JPG |
 | ⏱️ **Duplicate Guard** | Ignores repeated clicks on the same image within 2 seconds |
-| 📦 **Large Image Handling** | Images >20MB show an async processing indicator instead of freezing the UI |
+
+### Premium Features (License Required)
+
+| Feature | Description |
+|---------|-------------|
+| ⭐ **Drag & Drop Conversion** | Drop local image files onto the popup for quick format conversion |
+| 📁 **Batch Local Conversion** | Convert multiple local files at once |
+
+---
+
+## Free vs Premium
+
+| | Free | Premium |
+|---|:---:|:---:|
+| Right-click image conversion | ✅ | ✅ |
+| Copy to clipboard | ✅ | ✅ |
+| Quality adjustment | ✅ | ✅ |
+| Cross-origin image fetch | ✅ | ✅ |
+| Drag & Drop local conversion | — | ✅ |
+| Batch local file conversion | — | ✅ |
 
 ---
 
@@ -90,12 +110,17 @@ Most image conversion tools require uploading your files to a remote server. Ima
 4. Pick your format: PNG, JPG, WEBP, or AVIF
 5. Done — file downloads instantly, or image is copied to clipboard
 
-### Drag & Drop
+### Drag & Drop (Premium)
+
+> ⚠️ Drag & Drop is a premium feature. A license key is required.
 
 1. Click the ImageConv icon in your toolbar to open the popup
-2. Drag a local image file onto the drop zone
-3. Select your target format
-4. The converted file downloads automatically
+2. Click the 🔑 button in the top-right corner to enter your license key
+3. Once activated, drag a local image file onto the drop zone
+4. Select your target format
+5. The converted file downloads automatically
+
+You can purchase a license key at [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv).
 
 ### Quality Settings
 
@@ -183,14 +208,39 @@ The cross-origin image fetch function is only used to obtain image resources for
 
 Copyright © 2026 ImageConv. All rights reserved.
 
+### How Licensing Works
+
+ImageConv uses a device-based license system:
+
+1. **Purchase** a license key at [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv)
+2. **Activate** by clicking the 🔑 button in the popup and entering your key
+3. The key is bound to your device (hardware fingerprint) — one key, one device
+4. License is validated online every 24 hours; works offline for up to 7 days
+
+### What's Free vs Paid
+
+| Feature | Free | Premium |
+|---------|:----:|:-------:|
+| Right-click image conversion (web images) | ✅ | ✅ |
+| Save as PNG / JPG / WEBP / AVIF | ✅ | ✅ |
+| Copy to clipboard | ✅ | ✅ |
+| Quality adjustment sliders | ✅ | ✅ |
+| Cross-origin image fetch | ✅ | ✅ |
+| Smart link cleaning | ✅ | ✅ |
+| Drag & drop local file conversion | ❌ | ✅ |
+| Batch local file conversion | ❌ | ✅ |
+
+**Summary**: All web image features (right-click save/copy) are **free**. Local file conversion (drag & drop) requires a **premium license**.
+
 ---
 
 ## ❤️ Support
 
 If you find ImageConv helpful, consider supporting the project!
 
-<!-- Add your support link here -->
-**[👉 Support ImageConv](https://annmax1983.github.io/ImageConv/)**
+**[👉 Support on Ko-fi](https://ko-fi.com/annmax?ref=imageconv)**
+
+**[🌐 Official Website](https://www.annmax1983.com/extensions/imageconv)**
 
 ---
 
