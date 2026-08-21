@@ -169,6 +169,13 @@ Todos los valores de calidad son ajustables mediante deslizadores en el popup (r
 
 ---
 
+---
+
+## Aviso de código fuente
+
+> ⚠️ **Este repositorio no publica el código fuente.** Contiene únicamente documentación de uso, notas de versión y recursos de soporte. La extensión se distribuye exclusivamente a través de Chrome Web Store. No se proporcionan paquetes de instalación sin conexión ni código fuente para usuarios finales.
+
+
 ## Aviso de derechos de autor
 
 Esta extensión solo proporciona capacidades de conversión de formato de imagen local para el procesamiento personal sin conexión del usuario. Todas las imágenes, fotos y recursos gráficos de las páginas web pertenecen al propietario original de los derechos de autor. Los usuarios no deben usar imágenes convertidas para reproducción comercial, distribución no autorizada u otros actos que infrinjan los derechos de autor.

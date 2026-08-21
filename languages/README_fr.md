@@ -169,6 +169,13 @@ Toutes les valeurs de qualité sont ajustables via les curseurs dans le popup (p
 
 ---
 
+---
+
+## Avis sur le code source
+
+> ⚠️ **Ce dépôt ne publie pas le code source.** Il contient uniquement la documentation d'utilisation, les notes de mise à jour et les ressources d'assistance. L'extension est distribuée exclusivement via le Chrome Web Store. Aucun package d'installation hors ligne ni code source pour les utilisateurs finaux n'est fourni.
+
+
 ## Avis de droit d'auteur
 
 Cette extension ne fournit que des capacités de conversion de format d'image locale pour le traitement personnel hors ligne de l'utilisateur. Toutes les images, photos et ressources graphiques des pages web appartiennent au propriétaire original des droits d'auteur. Les utilisateurs ne doivent pas utiliser les images converties pour la reproduction commerciale, la distribution non autorisée ou d'autres actes portant atteinte aux droits d'auteur.

@@ -169,6 +169,13 @@ Alle Qualitätswerte sind über Schieberegler im Popup anpassbar (Bereich: 10–
 
 ---
 
+---
+
+## Hinweis zum Quellcode
+
+> ⚠️ **Dieses Repository veröffentlicht keinen Quellcode.** Es enthält nur Nutzerdokumentation, Versionshinweise und Support-Ressourcen. Die Erweiterung wird ausschließlich über den Chrome Web Store vertrieben. Es werden keine Offline-Installationspakete oder Quellcodes für Endbenutzer bereitgestellt.
+
+
 ## Urheberrechtlicher Haftungsausschluss
 
 Diese Erweiterung bietet nur lokale Bildformatkonvertierung für die persönliche Offline-Verarbeitung des Benutzers. Alle Bilder, Fotos und Grafikressourcen auf Webseiten unterliegen dem Urheberrecht des ursprünglichen Rechtsinhabers. Konvertierte Bilder dürfen nicht für kommerzielle Vervielfältigung, unbefugte Verbreitung oder andere urheberrechtsverletzende Handlungen verwendet werden.
