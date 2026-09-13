@@ -30,8 +30,10 @@ Most image conversion tools require uploading your files to a remote server. Ima
 | Feature | Description |
 |---------|-------------|
 | 🖼️ **Right-Click Conversion** | Convert any webpage image to PNG, JPG, WEBP, or AVIF via context menu |
+| 📱 **HEIC/HEIF Support** | Convert iPhone photos directly — drag & drop, paste, or right-click. Decoded locally via built-in WASM decoder |
+| 📐 **Resize** | Scale by percentage or set exact pixel dimensions (leave one field empty to keep aspect ratio). Applies to both popup and right-click conversions |
 | 📋 **Copy to Clipboard** | Right-click → Copy as PNG/JPG/WEBP/AVIF — paste into emails, chats, documents |
-| 📊 **File Size Comparison** | Toast notification shows original vs converted size with savings percentage |
+| 📊 **File Size Comparison** | Toast notification shows original vs converted size with savings percentage (based on real file sizes) |
 | 🎚️ **Adjustable Quality** | Fine-tune export quality for JPG, WEBP, and AVIF via sliders in the popup |
 | 🔗 **Smart Link Cleaning** | Strips CDN tracking parameters to fetch original images |
 | 🌐 **Cross-Origin Support** | Fetches images from any website via Service Worker |
@@ -43,7 +45,7 @@ Most image conversion tools require uploading your files to a remote server. Ima
 
 | Feature | Description |
 |---------|-------------|
-| ⭐ **Drag & Drop Conversion** | Drop local image files onto the popup for quick format conversion |
+| ⭐ **Drag & Drop Conversion** | Drop or paste (Ctrl+V) local images into the popup for quick conversion |
 | 📁 **Batch Local Conversion** | Convert multiple local files at once |
 
 ---
@@ -55,6 +57,8 @@ Most image conversion tools require uploading your files to a remote server. Ima
 | Right-click image conversion | ✅ | ✅ |
 | Copy to clipboard | ✅ | ✅ |
 | Quality adjustment | ✅ | ✅ |
+| HEIC/HEIF input | ✅ | ✅ |
+| Resize | ✅ | ✅ |
 | Cross-origin image fetch | ✅ | ✅ |
 | Drag & Drop local conversion | — | ✅ |
 | Batch local file conversion | — | ✅ |
@@ -126,6 +130,14 @@ You can purchase a license key at [annmax1983.com](https://www.annmax1983.com/ch
 
 Open the popup to adjust export quality for JPG, WEBP, and AVIF using the sliders. PNG is always lossless. Settings are saved automatically.
 
+### Resize
+
+The **Resize** section in the popup supports scaling by percentage (5%–200%) or exact pixel dimensions. Leave one field empty to keep the aspect ratio. The setting applies to both drag & drop and right-click conversions; the default keeps the original size.
+
+### HEIC/HEIF (iPhone Photos)
+
+Drop `.heic` / `.heif` files into the popup (or convert a HEIC image link on any webpage) to save them as PNG/JPG/WEBP. Decoding happens entirely locally via WASM — nothing is uploaded.
+
 ---
 
 ## Context Menu Structure
@@ -192,6 +204,8 @@ Destroys all temporary resources (blob, canvas, image element)
 
 All quality values are adjustable via sliders in the popup (range: 10–100).
 
+> ℹ️ AVIF is produced by a built-in WASM encoder (Chromium's Canvas cannot natively encode AVIF). Oversized images (over 25 megapixels) automatically fall back to WEBP with a notice.
+
 ---
 
 ## Copyright Disclaimer
@@ -231,6 +245,8 @@ ImageConv uses a device-based license system:
 | Save as PNG / JPG / WEBP / AVIF | ✅ | ✅ |
 | Copy to clipboard | ✅ | ✅ |
 | Quality adjustment sliders | ✅ | ✅ |
+| HEIC/HEIF input (WASM decode) | ✅ | ✅ |
+| Resize (percent / exact pixels) | ✅ | ✅ |
 | Cross-origin image fetch | ✅ | ✅ |
 | Smart link cleaning | ✅ | ✅ |
 | Drag & drop local file conversion | ❌ | ✅ |
