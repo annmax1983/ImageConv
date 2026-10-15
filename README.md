@@ -20,6 +20,7 @@ Most image conversion tools require uploading your files to a remote server. Ima
 | 🌍 **6 Languages** | Auto-detects your browser language — English, Spanish, German, Japanese, French, Chinese. |
 | 📋 **Copy & Save** | Right-click any image to save as a file OR copy directly to your clipboard. |
 | 📁 **Drag & Drop** | Drop local images onto the popup for quick conversion. |
+| 🖼️ **Batch Export** | List every image already loaded on a page, tick the ones you want, and export them all at once. |
 
 ---
 
@@ -47,6 +48,7 @@ Most image conversion tools require uploading your files to a remote server. Ima
 |---------|-------------|
 | ⭐ **Drag & Drop Conversion** | Drop or paste (Ctrl+V) local images into the popup for quick conversion |
 | 📁 **Batch Local Conversion** | Convert multiple local files at once |
+| 🖼️ **Batch Web Export** | Scan the page you are on, tick the images you want, and export them all in one run |
 
 ---
 
@@ -62,6 +64,7 @@ Most image conversion tools require uploading your files to a remote server. Ima
 | Cross-origin image fetch | ✅ | ✅ |
 | Drag & Drop local conversion | — | ✅ |
 | Batch local file conversion | — | ✅ |
+| Batch export images from a web page | — | ✅ |
 
 ---
 
@@ -126,6 +129,18 @@ Most image conversion tools require uploading your files to a remote server. Ima
 
 You can purchase a license key at [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv).
 
+### Batch Export Web Images (Premium)
+
+> ⚠️ Batch export is a premium feature. A license key is required.
+
+1. Open the page whose images you want (they must already be loaded)
+2. Click the ImageConv icon, then **Export all images on this page**
+3. A new tab lists every image found, largest first — tick the ones you want
+4. Choose the output format and click **Export selected**
+5. Each image is converted locally and downloaded to the `ImageConv/` folder
+
+Images smaller than 100 px are hidden by default (icons, avatars, tracking pixels) — adjust the filter in the toolbar. Up to 100 images per run.
+
 ### Quality Settings
 
 Open the popup to adjust export quality for JPG, WEBP, and AVIF using the sliders. PNG is always lossless. Settings are saved automatically.
@@ -163,11 +178,11 @@ The **Copy as** and **Save as** menus only appear when right-clicking on images 
 ImageConv is built with privacy as a core principle:
 
 - ✅ **Zero data upload** — All image processing happens in your browser's memory
-- ✅ **No analytics** — No tracking, no telemetry, no remote calls
+- ✅ **No analytics** — No tracking, no telemetry. The only outbound request is license validation (license key + a device fingerprint) when you activate, or when the cached 24 h check expires — image data is never transmitted
 - ✅ **No cookies** — No reading or writing of browser cookies
 - ✅ **No browsing history** — No access to your browsing data
 - ✅ **Temporary memory only** — Images exist in memory during conversion and are immediately destroyed after
-- ✅ **Minimal permissions** — Only requests what's strictly necessary: `contextMenus`, `downloads`, `offscreen`, `storage`, `clipboardWrite`
+- ✅ **Minimal permissions** — Only what each feature needs: `contextMenus`, `downloads`, `offscreen`, `storage`, `scripting`, `clipboardWrite`, plus `<all_urls>` so the extension can fetch the image you clicked and scan a page for image export
 
 ---
 
@@ -251,6 +266,7 @@ ImageConv uses a device-based license system:
 | Smart link cleaning | ✅ | ✅ |
 | Drag & drop local file conversion | ❌ | ✅ |
 | Batch local file conversion | ❌ | ✅ |
+| Batch export images from a web page | ❌ | ✅ |
 
 **Summary**: All web image features (right-click save/copy) are **free**. Local file conversion (drag & drop) requires a **premium license**.
 

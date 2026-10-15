@@ -20,6 +20,7 @@ Die meisten Bildkonvertierungstools verlangen, dass du deine Dateien auf einen R
 | 🌍 **6 Sprachen** | Erkennt automatisch deine Browsersprache — Englisch, Spanisch, Deutsch, Japanisch, Französisch, Chinesisch. |
 | 📋 **Kopieren & Speichern** | Rechtsklick auf ein beliebiges Bild, um es als Datei zu speichern ODER direkt in die Zwischenablage zu kopieren. |
 | 📁 **Drag & Drop** | Ziehe lokale Bilder auf das Popup zur schnellen Konvertierung. |
+| 🖼️ **Stapelexport** | Listet alle bereits geladenen Bilder einer Seite auf, du wählst aus und exportierst sie auf einmal. |
 
 ---
 
@@ -47,6 +48,7 @@ Die meisten Bildkonvertierungstools verlangen, dass du deine Dateien auf einen R
 |----------|--------------|
 | ⭐ **Drag & Drop Konvertierung** | Lokale Bilder per Drag & Drop oder Einfügen (Strg+V) ins Popup ziehen |
 | 📁 **Batch-Konvertierung** | Mehrere lokale Dateien auf einmal konvertieren |
+| 🖼️ **Batch-Export aus Webseiten** | Scannt die aktuelle Seite, du markierst die gewünschten Bilder und exportierst sie in einem Durchlauf |
 
 ---
 
@@ -62,6 +64,7 @@ Die meisten Bildkonvertierungstools verlangen, dass du deine Dateien auf einen R
 | Cross-Origin Bilder laden | ✅ | ✅ |
 | Drag & Drop lokale Konvertierung | — | ✅ |
 | Batch-Konvertierung lokaler Dateien | — | ✅ |
+| Bilder einer Webseite im Stapel exportieren | — | ✅ |
 
 ---
 
@@ -69,11 +72,11 @@ Die meisten Bildkonvertierungstools verlangen, dass du deine Dateien auf einen R
 
 <!-- Ersetzen durch tatsächliche Screenshots -->
 <p align="center">
-  <img src="screenshots/popup.png" alt="ImageConv Popup" width="360">
+  <img src="../screenshots/popup.png" alt="ImageConv Popup" width="360">
 </p>
 
 <p align="center">
-  <img src="screenshots/context-menu.png" alt="ImageConv Kontextmenü">
+  <img src="../screenshots/context-menu.png" alt="ImageConv Kontextmenü">
 </p>
 
 ---
@@ -126,6 +129,18 @@ Die meisten Bildkonvertierungstools verlangen, dass du deine Dateien auf einen R
 
 Du kannst einen Lizenzschlüssel unter [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv) erwerben.
 
+### Stapelexport von Web-Bildern (Premium)
+
+> ⚠️ Der Stapelexport ist eine Premium-Funktion. Ein Lizenzschlüssel ist erforderlich.
+
+1. Öffne die Seite, deren Bilder du exportieren möchtest (sie müssen bereits geladen sein)
+2. Klicke auf das ImageConv-Symbol und dann auf **Alle Bilder dieser Seite exportieren**
+3. Ein neuer Tab listet alle gefundenen Bilder auf, die größten zuerst — markiere die gewünschten
+4. Wähle das Zielformat und klicke auf **Auswahl exportieren**
+5. Jedes Bild wird lokal konvertiert und in den Ordner `ImageConv/` heruntergeladen
+
+Bilder unter 100 px werden standardmäßig ausgeblendet (Symbole, Avatare, Tracking-Pixel) — passe den Filter in der Symbolleiste an. Maximal 100 Bilder pro Durchlauf.
+
 ### Qualitätseinstellungen
 
 Öffne das Popup, um die Exportqualität für JPG, WEBP und AVIF über Schieberegler anzupassen. PNG ist immer verlustfrei. Einstellungen werden automatisch gespeichert.
@@ -163,11 +178,11 @@ Die Menüs **Kopieren als** und **Speichern als** erscheinen nur bei Rechtsklick
 ImageConv wurde mit Datenschutz als Grundprinzip entwickelt:
 
 - ✅ **Kein Datenupload** — Die gesamte Bildverarbeitung läuft im Arbeitsspeicher deines Browsers
-- ✅ **Keine Analytik** — Kein Tracking, keine Telemetrie, keine Remote-Aufrufe
+- ✅ **Keine Analytik** — Kein Tracking, keine Telemetrie. Die einzige ausgehende Anfrage ist die Lizenzprüfung (Lizenzschlüssel + Gerätefingerabdruck) beim Aktivieren oder wenn die zwischengespeicherte 24-Stunden-Prüfung abläuft — Bilddaten werden nie übertragen
 - ✅ **Keine Cookies** — Kein Lesen oder Schreiben von Browser-Cookies
 - ✅ **Kein Verlauf** — Kein Zugriff auf deine Browserdaten
 - ✅ **Nur temporärer Speicher** — Bilder existieren während der Konvertierung im Speicher und werden danach sofort gelöscht
-- ✅ **Minimale Berechtigungen** — Nur das absolut Notwendige: `contextMenus`, `downloads`, `offscreen`, `storage`, `clipboardWrite`
+- ✅ **Minimale Berechtigungen** — Nur was die jeweilige Funktion braucht: `contextMenus`, `downloads`, `offscreen`, `storage`, `scripting`, `clipboardWrite`, plus `<all_urls>`, um das angeklickte Bild zu laden und eine Seite für den Stapelexport zu scannen
 
 ---
 
@@ -251,6 +266,7 @@ ImageConv verwendet ein gerätebasiertes Lizenzsystem:
 | Intelligentes Link-Cleaning | ✅ | ✅ |
 | Drag & Drop lokale Dateikonvertierung | ❌ | ✅ |
 | Batch-Konvertierung lokaler Dateien | ❌ | ✅ |
+| Bilder einer Webseite im Stapel exportieren | ❌ | ✅ |
 
 **Zusammenfassung**: Alle Web-Bildfunktionen (Rechtsklick Speichern/Kopieren) sind **kostenlos**. Lokale Dateikonvertierung (Drag & Drop) erfordert eine **Premium-Lizenz**.
 

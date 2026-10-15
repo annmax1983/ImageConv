@@ -20,6 +20,7 @@ La plupart des outils de conversion d'images nécessitent d'envoyer vos fichiers
 | 🌍 **6 langues** | Détecte automatiquement la langue de votre navigateur — anglais, espagnol, allemand, japonais, français, chinois. |
 | 📋 **Copier et enregistrer** | Clic droit sur une image pour l'enregistrer ou la copier directement dans le presse-papiers. |
 | 📁 **Glisser-déposer** | Déposez des images locales sur le popup pour une conversion rapide. |
+| 🖼️ **Export par lots** | Liste toutes les images déjà chargées d'une page, vous choisissez celles à garder et les exportez d'un coup. |
 
 ---
 
@@ -47,6 +48,7 @@ La plupart des outils de conversion d'images nécessitent d'envoyer vos fichiers
 |---------|-------------|
 | ⭐ **Conversion par glisser-déposer** | Déposez ou collez (Ctrl+V) des images locales dans le popup pour une conversion rapide |
 | 📁 **Conversion locale par lot** | Convertissez plusieurs fichiers locaux en une seule fois |
+| 🖼️ **Export web par lots** | Analyse la page ouverte, vous cochez les images voulues et les exportez en une seule passe |
 
 ---
 
@@ -62,6 +64,7 @@ La plupart des outils de conversion d'images nécessitent d'envoyer vos fichiers
 | Récupération d'images cross-origin | ✅ | ✅ |
 | Conversion locale par glisser-déposer | — | ✅ |
 | Conversion de fichiers locaux par lot | — | ✅ |
+| Exporter les images d'une page web | — | ✅ |
 
 ---
 
@@ -69,11 +72,11 @@ La plupart des outils de conversion d'images nécessitent d'envoyer vos fichiers
 
 <!-- Remplacer par de vraies captures d'écran -->
 <p align="center">
-  <img src="screenshots/popup.png" alt="Popup ImageConv" width="360">
+  <img src="../screenshots/popup.png" alt="Popup ImageConv" width="360">
 </p>
 
 <p align="center">
-  <img src="screenshots/context-menu.png" alt="Menu contextuel ImageConv">
+  <img src="../screenshots/context-menu.png" alt="Menu contextuel ImageConv">
 </p>
 
 ---
@@ -126,6 +129,18 @@ La plupart des outils de conversion d'images nécessitent d'envoyer vos fichiers
 
 Vous pouvez acheter une clé de licence sur [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv).
 
+### Export par lots des images web (Premium)
+
+> ⚠️ L'export par lots est une fonctionnalité premium. Une clé de licence est requise.
+
+1. Ouvrez la page dont vous voulez exporter les images (elles doivent déjà être chargées)
+2. Cliquez sur l'icône ImageConv, puis sur **Exporter toutes les images de cette page**
+3. Un nouvel onglet liste toutes les images trouvées, de la plus grande à la plus petite — cochez celles voulues
+4. Choisissez le format de sortie et cliquez sur **Exporter la sélection**
+5. Chaque image est convertie localement et téléchargée dans le dossier `ImageConv/`
+
+Les images de moins de 100 px sont masquées par défaut (icônes, avatars, pixels de suivi) — ajustez le filtre dans la barre d'outils. Jusqu'à 100 images par passe.
+
 ### Réglages de qualité
 
 Ouvrez le popup pour ajuster la qualité d'export pour JPG, WEBP et AVIF à l'aide des curseurs. Le PNG est toujours sans perte. Les réglages sont sauvegardés automatiquement.
@@ -163,11 +178,11 @@ Les menus **Copier sous** et **Enregistrer sous** n'apparaissent que lors d'un c
 ImageConv a été conçu avec la confidentialité comme principe fondamental :
 
 - ✅ **Zéro envoi de données** — Tout le traitement des images se fait en mémoire dans votre navigateur
-- ✅ **Pas d'analytics** — Aucun suivi, aucune télémétrie, aucun appel distant
+- ✅ **Pas d'analytics** — Aucun suivi, aucune télémétrie. La seule requête sortante est la validation de licence (clé de licence + empreinte de l'appareil) lors de l'activation ou quand la vérification en cache de 24 h expire — les données d'image ne sont jamais transmises
 - ✅ **Pas de cookies** — Aucune lecture ni écriture de cookies du navigateur
 - ✅ **Pas d'historique de navigation** — Aucun accès à vos données de navigation
 - ✅ **Mémoire temporaire uniquement** — Les images existent en mémoire pendant la conversion et sont détruites immédiatement après
-- ✅ **Permissions minimales** — Ne demande que le strict nécessaire : `contextMenus`, `downloads`, `offscreen`, `storage`, `clipboardWrite`
+- ✅ **Permissions minimales** — Uniquement ce dont chaque fonction a besoin : `contextMenus`, `downloads`, `offscreen`, `storage`, `scripting`, `clipboardWrite`, plus `<all_urls>` pour récupérer l'image cliquée et analyser une page pour l'export par lots
 
 ---
 
@@ -251,6 +266,7 @@ ImageConv utilise un système de licence basé sur l'appareil :
 | Nettoyage intelligent des liens | ✅ | ✅ |
 | Conversion locale par glisser-déposer | ❌ | ✅ |
 | Conversion de fichiers locaux par lot | ❌ | ✅ |
+| Exporter les images d'une page web | ❌ | ✅ |
 
 **Résumé** : Toutes les fonctionnalités liées aux images web (enregistrer/copier par clic droit) sont **gratuites**. La conversion de fichiers locaux (glisser-déposer) nécessite une **licence Premium**.
 
