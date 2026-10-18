@@ -10,11 +10,11 @@ A lightweight browser extension that converts images between PNG, JPG, WEBP, and
 
 ## Why ImageConv?
 
-Most image conversion tools require uploading your files to a remote server. ImageConv does everything inside your browser using the Canvas API — no data ever leaves your machine.
+Most image conversion tools require uploading your files to a remote server. ImageConv does everything inside your browser using the Canvas API — no image data ever leaves your machine.
 
 | Advantage | Detail |
 |-----------|--------|
-| 🔒 **Privacy-First** | All processing happens in your browser's memory. No servers, no uploads, no tracking. |
+| 🔒 **Privacy-First** | All processing happens in your browser's memory. No uploads, no tracking. The only outbound request is optional license validation. |
 | ⚡ **Instant Conversion** | Images ≤5MB convert in under 500ms. No waiting for server round-trips. |
 | 🎯 **Zero Dependencies** | Built with vanilla JavaScript and native Chrome APIs. No frameworks, no bloat. |
 | 🌍 **6 Languages** | Auto-detects your browser language — English, Spanish, German, Japanese, French, Chinese. |
@@ -178,7 +178,7 @@ The **Copy as** and **Save as** menus only appear when right-clicking on images 
 ImageConv is built with privacy as a core principle:
 
 - ✅ **Zero data upload** — All image processing happens in your browser's memory
-- ✅ **No analytics** — No tracking, no telemetry. The only outbound request is license validation (license key + a device fingerprint) when you activate, or when the cached 24 h check expires — image data is never transmitted
+- ✅ **No analytics** — No tracking, no telemetry. The only outbound request is license validation (license key + a random install identifier) when you activate, or when the cached 2 h check expires — image data is never transmitted
 - ✅ **No cookies** — No reading or writing of browser cookies
 - ✅ **No browsing history** — No access to your browsing data
 - ✅ **Temporary memory only** — Images exist in memory during conversion and are immediately destroyed after
@@ -245,12 +245,12 @@ Copyright © 2026 ImageConv. All rights reserved.
 
 ### How Licensing Works
 
-ImageConv uses a device-based license system:
+ImageConv uses an activation-based license system:
 
 1. **Purchase** a license key at [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv)
 2. **Activate** by clicking the 🔑 button in the popup and entering your key
-3. The key is bound to your device (hardware fingerprint) — one key, one device
-4. License is validated online every 24 hours; works offline for up to 7 days
+3. Each activation covers one browser installation; deactivate an old installation in the popup to free a slot for a new one
+4. License is validated online every 2 hours; if the server is unreachable, the cached license keeps working
 
 ### What's Free vs Paid
 

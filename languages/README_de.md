@@ -10,11 +10,11 @@ Eine schlanke Browser-Erweiterung zum Konvertieren von Bildern zwischen PNG, JPG
 
 ## Warum ImageConv?
 
-Die meisten Bildkonvertierungstools verlangen, dass du deine Dateien auf einen Remote-Server hochlädst. ImageConv erledigt alles direkt in deinem Browser über die Canvas API — keine Daten verlassen jemals deinen Rechner.
+Die meisten Bildkonvertierungstools verlangen, dass du deine Dateien auf einen Remote-Server hochlädst. ImageConv erledigt alles direkt in deinem Browser über die Canvas API — keine Bilddaten verlassen jemals deinen Rechner.
 
 | Vorteil | Details |
 |---------|---------|
-| 🔒 **Datenschutz zuerst** | Die gesamte Verarbeitung läuft im Arbeitsspeicher deines Browsers. Keine Server, keine Uploads, kein Tracking. |
+| 🔒 **Datenschutz zuerst** | Die gesamte Verarbeitung läuft im Arbeitsspeicher deines Browsers. Keine Uploads, kein Tracking. Die einzige ausgehende Anfrage ist die optionale Lizenzprüfung. |
 | ⚡ **Sofortige Konvertierung** | Bilder ≤5MB werden in unter 500ms konvertiert. Kein Warten auf Server-Antworten. |
 | 🎯 **Null Abhängigkeiten** | Gebaut mit Vanilla JavaScript und nativen Chrome APIs. Keine Frameworks, kein Ballast. |
 | 🌍 **6 Sprachen** | Erkennt automatisch deine Browsersprache — Englisch, Spanisch, Deutsch, Japanisch, Französisch, Chinesisch. |
@@ -178,7 +178,7 @@ Die Menüs **Kopieren als** und **Speichern als** erscheinen nur bei Rechtsklick
 ImageConv wurde mit Datenschutz als Grundprinzip entwickelt:
 
 - ✅ **Kein Datenupload** — Die gesamte Bildverarbeitung läuft im Arbeitsspeicher deines Browsers
-- ✅ **Keine Analytik** — Kein Tracking, keine Telemetrie. Die einzige ausgehende Anfrage ist die Lizenzprüfung (Lizenzschlüssel + Gerätefingerabdruck) beim Aktivieren oder wenn die zwischengespeicherte 24-Stunden-Prüfung abläuft — Bilddaten werden nie übertragen
+- ✅ **Keine Analytik** — Kein Tracking, keine Telemetrie. Die einzige ausgehende Anfrage ist die Lizenzprüfung (Lizenzschlüssel + eine zufällige Installationskennung) beim Aktivieren oder wenn die zwischengespeicherte 2-Stunden-Prüfung abläuft — Bilddaten werden nie übertragen
 - ✅ **Keine Cookies** — Kein Lesen oder Schreiben von Browser-Cookies
 - ✅ **Kein Verlauf** — Kein Zugriff auf deine Browserdaten
 - ✅ **Nur temporärer Speicher** — Bilder existieren während der Konvertierung im Speicher und werden danach sofort gelöscht
@@ -245,12 +245,12 @@ Copyright © 2026 ImageConv. Alle Rechte vorbehalten.
 
 ### So funktioniert die Lizenzierung
 
-ImageConv verwendet ein gerätebasiertes Lizenzsystem:
+ImageConv verwendet ein aktivierungsbasiertes Lizenzsystem:
 
 1. **Kauf** eines Lizenzschlüssels unter [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv)
 2. **Aktivierung** durch Klick auf die 🔑-Taste im Popup und Eingabe deines Schlüssels
-3. Der Schlüssel wird an dein Gerät gebunden (Hardware-Fingerprint) — ein Schlüssel, ein Gerät
-4. Die Lizenz wird alle 24 Stunden online validiert; funktioniert offline bis zu 7 Tage
+3. Jede Aktivierung gilt für eine Browser-Installation; deaktiviere eine alte Installation im Popup, um einen Platz für eine neue freizugeben
+4. Die Lizenz wird alle 2 Stunden online validiert; ist der Server nicht erreichbar, funktioniert die gecachte Lizenz weiter
 
 ### Was ist kostenlos vs. kostenpflichtig?
 

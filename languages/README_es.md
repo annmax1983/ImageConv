@@ -10,11 +10,11 @@ Una extensión ligera para el navegador que convierte imágenes entre los format
 
 ## ¿Por qué ImageConv?
 
-La mayoría de herramientas de conversión de imágenes requieren subir tus archivos a un servidor remoto. ImageConv hace todo dentro de tu navegador usando la Canvas API — tus datos nunca salen de tu máquina.
+La mayoría de herramientas de conversión de imágenes requieren subir tus archivos a un servidor remoto. ImageConv hace todo dentro de tu navegador usando la Canvas API — tus imágenes nunca salen de tu navegador.
 
 | Ventaja | Detalle |
 |---------|--------|
-| 🔒 **Privacidad ante todo** | Todo el procesamiento ocurre en la memoria de tu navegador. Sin servidores, sin subidas, sin rastreo. |
+| 🔒 **Privacidad ante todo** | Todo el procesamiento ocurre en la memoria de tu navegador. Sin subidas, sin rastreo. La única petición saliente es la validación opcional de la licencia. |
 | ⚡ **Conversión instantánea** | Imágenes de hasta 5 MB se convierten en menos de 500 ms. Sin esperas de ida y vuelta al servidor. |
 | 🎯 **Cero dependencias** | Construida con JavaScript vanilla y APIs nativas de Chrome. Sin frameworks, sin peso muerto. |
 | 🌍 **6 idiomas** | Detecta automáticamente el idioma de tu navegador: inglés, español, alemán, japonés, francés y chino. |
@@ -178,7 +178,7 @@ Los menús **Copiar como** y **Guardar como** solo aparecen al hacer clic derech
 ImageConv está construida con la privacidad como principio fundamental:
 
 - ✅ **Cero subida de datos** — Todo el procesamiento de imágenes ocurre en la memoria de tu navegador
-- ✅ **Sin analíticas** — Sin rastreo ni telemetría. La única solicitud saliente es la validación de licencia (clave de licencia + huella del dispositivo) al activar o cuando caduca la comprobación en caché de 24 h — los datos de imagen nunca se transmiten
+- ✅ **Sin analíticas** — Sin rastreo ni telemetría. La única solicitud saliente es la validación de licencia (clave de licencia + un identificador de instalación aleatorio) al activar o cuando caduca la comprobación en caché de 2 h — los datos de imagen nunca se transmiten
 - ✅ **Sin cookies** — Sin lectura ni escritura de cookies del navegador
 - ✅ **Sin historial de navegación** — Sin acceso a tus datos de navegación
 - ✅ **Solo memoria temporal** — Las imágenes existen en memoria durante la conversión y se destruyen inmediatamente después
@@ -245,12 +245,12 @@ Copyright © 2026 ImageConv. Todos los derechos reservados.
 
 ### Cómo funciona la licencia
 
-ImageConv utiliza un sistema de licencia basado en dispositivo:
+ImageConv utiliza un sistema de licencia basado en activaciones:
 
 1. **Compra** una clave de licencia en [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv)
 2. **Activa** haciendo clic en el botón 🔑 del popup e introduciendo tu clave
-3. La clave se vincula a tu dispositivo (huella de hardware) — una clave, un dispositivo
-4. La licencia se valida online cada 24 horas; funciona sin conexión hasta 7 días
+3. Cada activación cubre una instalación de navegador; desactiva una instalación antigua en el popup para liberar un espacio para una nueva
+4. La licencia se valida online cada 2 horas; si no se puede alcanzar el servidor, la licencia en caché sigue funcionando
 
 ### Qué es gratis vs de pago
 
