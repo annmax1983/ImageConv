@@ -33,7 +33,7 @@ Die meisten Bildkonvertierungstools verlangen, dass du deine Dateien auf einen R
 | 🖼️ **Rechtsklick-Konvertierung** | Konvertiere beliebige Webseiten-Bilder zu PNG, JPG, WEBP oder AVIF über das Kontextmenü |
 | 📱 **HEIC/HEIF-Unterstützung** | iPhone-Fotos direkt konvertieren — per Drag & Drop, Einfügen oder Rechtsklick. Lokale Entschlüsselung über eingebauten WASM-Decoder |
 | 📐 **Größenänderung** | Skalierung in Prozent oder exakte Pixelmaße (ein Feld leer lassen für Originalverhältnis). Gilt für Popup- und Rechtsklick-Konvertierung |
-| 📋 **In Zwischenablage kopieren** | Rechtsklick → Als PNG/JPG/WEBP/AVIF kopieren — in E-Mails, Chats, Dokumente einfügen |
+| 📋 **In Zwischenablage kopieren** | Rechtsklick → Als PNG kopieren — in E-Mails, Chats, Dokumente einfügen |
 | 📊 **Dateigrößen-Vergleich** | Toast-Benachrichtigung zeigt Original- vs. konvertierte Größe mit Ersparnis-Prozent (basierend auf echten Dateigrößen) |
 | 🎚️ **Qualitätseinstellung** | Feinabstimmung der Exportqualität für JPG, WEBP und AVIF über Schieberegler im Popup |
 | 🔗 **Intelligentes Link-Cleaning** | Entfernt CDN-Tracking-Parameter, um Originalbilder zu laden |
@@ -42,29 +42,37 @@ Die meisten Bildkonvertierungstools verlangen, dass du deine Dateien auf einen R
 | 🛡️ **JPG weißer Hintergrund** | Transparente Hintergründe werden beim Konvertieren von PNG → JPG automatisch weiß gefüllt |
 | ⏱️ **Duplikat-Schutz** | Ignoriert wiederholte Klicks auf dasselbe Bild innerhalb von 2 Sekunden |
 
-### Premium-Funktionen (Lizenz erforderlich)
+### Pro-Funktionen (Lizenz erforderlich)
 
 | Funktion | Beschreibung |
 |----------|--------------|
-| ⭐ **Drag & Drop Konvertierung** | Lokale Bilder per Drag & Drop oder Einfügen (Strg+V) ins Popup ziehen |
-| 📁 **Batch-Konvertierung** | Mehrere lokale Dateien auf einmal konvertieren |
-| 🖼️ **Batch-Export aus Webseiten** | Scannt die aktuelle Seite, du markierst die gewünschten Bilder und exportierst sie in einem Durchlauf |
+| ♾️ **Unbegrenzte lokale Batch-Konvertierung** | Kostenlose Mehrfach-Drops konvertieren bis zu 5 Dateien pro Durchlauf; Pro hebt das lokale Limit auf |
+| 📦 **Große Web-Exporte** | Bis zu 100 Bilder einer Seite pro Durchlauf exportieren (kostenlos: 5) |
+| 🗜️ **ZIP-Archiv-Export** | Ein Web-Batch als eine `.zip`-Datei. Schlägt das Packen fehl oder überschreitet das Archiv 4 GB, werden fertige Bilder einzeln gespeichert |
+| 🗂️ **Batch-Presets** | Bis zu 12 Presets für Format/Qualität/Größe im Batch-Dialog „Optionen“ speichern und mit einem Klick erneut anwenden |
+| 🏷️ **Dateinamen-Vorlagen** | Batch-Webdownloads mit `{name}`, `{index}`, `{format}`, `{date}`, `{width}` und `{height}` benennen. Die Erweiterung wird automatisch ergänzt, Namenskollisionen erhalten `-2`, `-3` |
+
+Format-, Qualitäts- und Größenbearbeitung im Batch-Dialog „Optionen“ bleibt kostenlos. Presets, Dateibenennung und ZIP-Auslieferung sind Pro und gelten nur für die Batch-Exportseite, nicht für Drag & Drop im Popup.
 
 ---
 
-## Kostenlos vs. Premium
+## Kostenlos vs. Pro
 
-| | Kostenlos | Premium |
+| | Kostenlos | Pro |
 |---|:---:|:---:|
 | Rechtsklick-Bildkonvertierung | ✅ | ✅ |
-| In Zwischenablage kopieren | ✅ | ✅ |
+| In Zwischenablage kopieren | ✅ Nur PNG | ✅ Nur PNG |
 | Qualitätseinstellung | ✅ | ✅ |
 | HEIC/HEIF-Eingabe | ✅ | ✅ |
 | Größenänderung | ✅ | ✅ |
 | Cross-Origin Bilder laden | ✅ | ✅ |
-| Drag & Drop lokale Konvertierung | — | ✅ |
-| Batch-Konvertierung lokaler Dateien | — | ✅ |
-| Bilder einer Webseite im Stapel exportieren | — | ✅ |
+| Drag & Drop / Einfügen lokaler Bilder | ✅ Einzeldatei | ✅ Einzeldatei |
+| Batch-Konvertierung lokaler Dateien | Bis zu 5 pro Durchlauf | Unbegrenzt |
+| Bilder einer Webseite im Stapel exportieren | Bis zu 5 pro Durchlauf | Bis zu 100 pro Durchlauf |
+| Batch-Format / -Qualität / -Größe | ✅ | ✅ |
+| Batch-Presets | — | ✅ Bis zu 12 |
+| Dateinamen-Vorlagen (Batch-Seite) | — | ✅ |
+| ZIP-Archiv-Auslieferung (Batch-Seite) | — | ✅ |
 
 ---
 
@@ -113,33 +121,29 @@ Die meisten Bildkonvertierungstools verlangen, dass du deine Dateien auf einen R
 
 1. Rechtsklick auf ein beliebiges Bild auf einer Webseite
 2. Wähle **ImageConv** aus dem Kontextmenü
-3. Wähle **Speichern als** oder **Kopieren als**
-4. Wähle dein Format: PNG, JPG, WEBP oder AVIF
-5. Fertig — die Datei wird sofort heruntergeladen oder das Bild in die Zwischenablage kopiert
+3. Wähle **Speichern als** (PNG/JPG/WEBP/AVIF) oder **Kopieren als PNG**
+4. Fertig — die Datei wird sofort heruntergeladen oder das Bild als PNG in die Zwischenablage kopiert
 
-### Drag & Drop (Premium)
-
-> ⚠️ Drag & Drop ist eine Premium-Funktion. Ein Lizenzschlüssel ist erforderlich.
+### Drag & Drop / Einfügen (kostenlos)
 
 1. Klicke auf das ImageConv-Symbol in deiner Toolbar, um das Popup zu öffnen
-2. Klicke auf die 🔑-Taste oben rechts, um deinen Lizenzschlüssel einzugeben
-3. Sobald aktiviert, ziehe eine lokale Bilddatei auf die Dropzone
-4. Wähle dein Zielformat
-5. Die konvertierte Datei wird automatisch heruntergeladen
+2. Ziehe eine lokale Bilddatei auf die Dropzone oder füge sie mit Strg+V ein
+3. Wähle dein Zielformat
+4. Die konvertierte Datei wird automatisch heruntergeladen
 
-Du kannst einen Lizenzschlüssel unter [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv) erwerben.
+Einzelne Bilder sind immer kostenlos. Im kostenlosen Plan konvertiert ein Mehrfach-Drop die ersten 5 Dateien; eine Pro-Lizenz hebt das Limit pro Durchlauf auf. Batch-Presets, Dateinamen-Vorlagen und ZIP-Auslieferung gibt es nur auf der Web-Batch-Seite, nicht bei Drag & Drop im Popup.
 
-### Stapelexport von Web-Bildern (Premium)
-
-> ⚠️ Der Stapelexport ist eine Premium-Funktion. Ein Lizenzschlüssel ist erforderlich.
+### Stapelexport von Web-Bildern (kostenlos 5, Pro 100)
 
 1. Öffne die Seite, deren Bilder du exportieren möchtest (sie müssen bereits geladen sein)
-2. Klicke auf das ImageConv-Symbol und dann auf **Alle Bilder dieser Seite exportieren**
+2. Klicke auf das ImageConv-Symbol und dann auf **Bilder dieser Seite exportieren**
 3. Ein neuer Tab listet alle gefundenen Bilder auf, die größten zuerst — markiere die gewünschten
-4. Wähle das Zielformat und klicke auf **Auswahl exportieren**
-5. Jedes Bild wird lokal konvertiert und in den Ordner `ImageConv/` heruntergeladen
+4. Klicke auf **Optionen**, um Format, Qualität und Größe einzustellen. Alle können diese bearbeiten; Pro kann zusätzlich ein Preset anwenden oder speichern, die Dateinamen-Vorlage bearbeiten und unter Auslieferung **Ein ZIP-Archiv** wählen
+5. Klicke auf **Auswahl exportieren** (bei aktiver ZIP-Auslieferung heißt der Button **ZIP exportieren**)
 
-Bilder unter 100 px werden standardmäßig ausgeblendet (Symbole, Avatare, Tracking-Pixel) — passe den Filter in der Symbolleiste an. Maximal 100 Bilder pro Durchlauf.
+Einzelne Dateien werden mit der Namensvorlage unter `ImageConv/` gespeichert. ZIP-Läufe laden eine `ImageConv/<host>-YYYYMMDD-HHmm.zip` herunter; schlägt das Packen fehl oder überschreitet das Archiv 4 GB, werden fertige Bilder einzeln gespeichert.
+
+Bilder unter 100 px werden standardmäßig ausgeblendet (Symbole, Avatare, Tracking-Pixel) — passe den Filter in der Symbolleiste an. Kostenlos sind bis zu 5 Bilder pro Durchlauf möglich, mit Pro bis zu 100.
 
 ### Qualitätseinstellungen
 
@@ -151,7 +155,7 @@ Der Bereich „Größe ändern“ im Popup unterstützt Skalierung in Prozent (5
 
 ### HEIC/HEIF (iPhone-Fotos)
 
-Ziehe `.heic`- / `.heif`-Dateien ins Popup (oder konvertiere einen HEIC-Bildlink auf einer Webseite), um sie als PNG/JPG/WEBP zu speichern. Die Entschlüsselung erfolgt vollständig lokal über WASM — nichts wird hochgeladen.
+Ziehe `.heic`- / `.heif`-Dateien ins Popup oder füge sie ein, oder klicke mit der rechten Maustaste auf ein auf einer Seite angezeigtes HEIC-Bild, um es als PNG/JPG/WEBP zu speichern. Die Entschlüsselung erfolgt vollständig lokal über WASM — nichts wird hochgeladen. HEIC-Eingabe ist in jedem Plan kostenlos.
 
 ---
 
@@ -163,13 +167,10 @@ ImageConv
 ├── Speichern als JPG (Hohe Qualität)
 ├── Speichern als WEBP (Kompakt)
 ├── Speichern als AVIF (Beste Kompression)
-├── Kopieren als PNG (Verlustfrei)
-├── Kopieren als JPG (Hohe Qualität)
-├── Kopieren als WEBP (Kompakt)
-└── Kopieren als AVIF (Beste Kompression)
+└── Kopieren als PNG (Verlustfrei)
 ```
 
-Die Menüs **Kopieren als** und **Speichern als** erscheinen nur bei Rechtsklick auf Bilder oder Links, die auf Bilddateien zeigen (`.png`, `.jpg`, `.jpeg`, `.webp`, `.avif`, `.gif`, `.bmp`, `.jfif`, `.svg`).
+Die Menüs **Speichern als** und **Kopieren als PNG** erscheinen nur beim Rechtsklick auf ein Bild, auch auf ein Bild innerhalb eines Links. Reine Links zu Bilddateien zeigen das Menü nicht. Die Zwischenablage-Ausgabe ist nur PNG.
 
 ---
 
@@ -254,21 +255,25 @@ ImageConv verwendet ein aktivierungsbasiertes Lizenzsystem:
 
 ### Was ist kostenlos vs. kostenpflichtig?
 
-| Funktion | Kostenlos | Premium |
-|----------|:---------:|:-------:|
+| Funktion | Kostenlos | Pro |
+|----------|:---------:|:---:|
 | Rechtsklick-Bildkonvertierung (Web-Bilder) | ✅ | ✅ |
 | Speichern als PNG / JPG / WEBP / AVIF | ✅ | ✅ |
-| In Zwischenablage kopieren | ✅ | ✅ |
+| In Zwischenablage kopieren | ✅ Nur PNG | ✅ Nur PNG |
 | Qualitätseinstellung per Schieberegler | ✅ | ✅ |
 | HEIC/HEIF-Eingabe (WASM-Entschlüsselung) | ✅ | ✅ |
 | Größenänderung (Prozent / Pixel) | ✅ | ✅ |
 | Cross-Origin Bilder laden | ✅ | ✅ |
 | Intelligentes Link-Cleaning | ✅ | ✅ |
-| Drag & Drop lokale Dateikonvertierung | ❌ | ✅ |
-| Batch-Konvertierung lokaler Dateien | ❌ | ✅ |
-| Bilder einer Webseite im Stapel exportieren | ❌ | ✅ |
+| Drag & Drop / Einfügen lokaler Dateien | ✅ Einzeldatei | ✅ Einzeldatei |
+| Batch-Konvertierung lokaler Dateien | Bis zu 5 pro Durchlauf | Unbegrenzt |
+| Bilder einer Webseite im Stapel exportieren | Bis zu 5 pro Durchlauf | Bis zu 100 pro Durchlauf |
+| Batch-Format / -Qualität / -Größe | ✅ | ✅ |
+| Batch-Presets | — | ✅ Bis zu 12 |
+| Dateinamen-Vorlagen (Batch-Seite) | — | ✅ |
+| ZIP-Archiv-Auslieferung (Batch-Seite) | — | ✅ |
 
-**Zusammenfassung**: Alle Web-Bildfunktionen (Rechtsklick Speichern/Kopieren) sind **kostenlos**. Lokale Dateikonvertierung (Drag & Drop) erfordert eine **Premium-Lizenz**.
+**Zusammenfassung**: Rechtsklick-Konvertierung, einzelne Drag & Drop-/Einfüge-Vorgänge, bis zu 5 Bilder pro Batch-Durchlauf und die Bearbeitung von Format/Qualität/Größe im Batch-Dialog „Optionen“ sind **kostenlos**. Eine **Pro-Lizenz** hebt das lokale Batch-Limit auf (bis zu 100 Web-Bilder pro Durchlauf) und schaltet Batch-Presets, Dateinamen-Vorlagen und ZIP-Auslieferung frei.
 
 ---
 

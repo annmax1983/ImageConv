@@ -33,7 +33,7 @@ Most image conversion tools require uploading your files to a remote server. Ima
 | 🖼️ **Right-Click Conversion** | Convert any webpage image to PNG, JPG, WEBP, or AVIF via context menu |
 | 📱 **HEIC/HEIF Support** | Convert iPhone photos directly — drag & drop, paste, or right-click. Decoded locally via built-in WASM decoder |
 | 📐 **Resize** | Scale by percentage or set exact pixel dimensions (leave one field empty to keep aspect ratio). Applies to both popup and right-click conversions |
-| 📋 **Copy to Clipboard** | Right-click → Copy as PNG/JPG/WEBP/AVIF — paste into emails, chats, documents |
+| 📋 **Copy to Clipboard** | Right-click → Copy as PNG — paste into emails, chats, documents |
 | 📊 **File Size Comparison** | Toast notification shows original vs converted size with savings percentage (based on real file sizes) |
 | 🎚️ **Adjustable Quality** | Fine-tune export quality for JPG, WEBP, and AVIF via sliders in the popup |
 | 🔗 **Smart Link Cleaning** | Strips CDN tracking parameters to fetch original images |
@@ -41,30 +41,39 @@ Most image conversion tools require uploading your files to a remote server. Ima
 | 🔤 **6-Language i18n** | Context menu and UI auto-match your browser language |
 | 🛡️ **JPG White Fill** | Automatically fills transparent backgrounds with white when converting PNG → JPG |
 | ⏱️ **Duplicate Guard** | Ignores repeated clicks on the same image within 2 seconds |
+| 📦 **Batch Up to 5 per Run** | On the free plan, convert up to 5 local files per drop, or export up to 5 web images per run. Pro raises both limits |
 
-### Premium Features (License Required)
+### Pro Features (License Required)
 
 | Feature | Description |
 |---------|-------------|
-| ⭐ **Drag & Drop Conversion** | Drop or paste (Ctrl+V) local images into the popup for quick conversion |
-| 📁 **Batch Local Conversion** | Convert multiple local files at once |
-| 🖼️ **Batch Web Export** | Scan the page you are on, tick the images you want, and export them all in one run |
+| ♾️ **Unlimited Local Batch** | Free multi-file drops convert up to 5 files per run; Pro removes the local cap |
+| 📦 **Large Web Exports** | Export up to 100 images from a page in one run (free: 5) |
+| 🗜️ **ZIP Archive Export** | Bundle a web batch into one `.zip` file. If packaging fails or the archive would exceed 4 GB, completed images are saved individually |
+| 🗂️ **Batch Presets** | Save up to 12 format/quality/resize presets in the batch Options dialog and reapply them in one click |
+| 🏷️ **Filename Templates** | Name batch web downloads with `{name}`, `{index}`, `{format}`, `{date}`, `{width}`, and `{height}`. The extension is added automatically and collisions get `-2`, `-3` |
+
+Format, quality, and resize editing in the batch Options dialog stays free. Presets, file naming, and ZIP delivery are Pro and apply to the batch export page, not to popup drag & drop.
 
 ---
 
-## Free vs Premium
+## Free vs Pro
 
-| | Free | Premium |
+| | Free | Pro |
 |---|:---:|:---:|
 | Right-click image conversion | ✅ | ✅ |
-| Copy to clipboard | ✅ | ✅ |
+| Copy to clipboard | ✅ PNG only | ✅ PNG only |
 | Quality adjustment | ✅ | ✅ |
 | HEIC/HEIF input | ✅ | ✅ |
 | Resize | ✅ | ✅ |
 | Cross-origin image fetch | ✅ | ✅ |
-| Drag & Drop local conversion | — | ✅ |
-| Batch local file conversion | — | ✅ |
-| Batch export images from a web page | — | ✅ |
+| Drag & drop / paste local images | ✅ Single file | ✅ Single file |
+| Batch local file conversion | Up to 5 per run | Unlimited |
+| Batch export images from a web page | Up to 5 per run | Up to 100 per run |
+| Batch format / quality / resize | ✅ | ✅ |
+| Batch presets | — | ✅ Up to 12 |
+| Filename templates (batch page) | — | ✅ |
+| ZIP archive delivery (batch page) | — | ✅ |
 
 ---
 
@@ -113,33 +122,29 @@ Most image conversion tools require uploading your files to a remote server. Ima
 
 1. Right-click any image on a webpage
 2. Select **ImageConv** from the context menu
-3. Choose **Save as** or **Copy as**
-4. Pick your format: PNG, JPG, WEBP, or AVIF
-5. Done — file downloads instantly, or image is copied to clipboard
+3. Choose **Save as** (PNG/JPG/WEBP/AVIF) or **Copy as PNG**
+4. Done — the file downloads instantly, or the image is copied to clipboard as PNG
 
-### Drag & Drop (Premium)
-
-> ⚠️ Drag & Drop is a premium feature. A license key is required.
+### Drag & Drop / Paste (Free)
 
 1. Click the ImageConv icon in your toolbar to open the popup
-2. Click the 🔑 button in the top-right corner to enter your license key
-3. Once activated, drag a local image file onto the drop zone
-4. Select your target format
-5. The converted file downloads automatically
+2. Drag a local image file onto the drop zone, or paste with Ctrl+V
+3. Select your target format
+4. The converted file downloads automatically
 
-You can purchase a license key at [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv).
+Single images are always free. On the free plan a multi-file drop converts the first 5 files; a Pro license removes the per-run cap. Batch presets, filename templates, and ZIP delivery are only available on the web batch page, not for popup drag & drop.
 
-### Batch Export Web Images (Premium)
-
-> ⚠️ Batch export is a premium feature. A license key is required.
+### Batch Export Web Images (Free Up to 5, Pro Up to 100)
 
 1. Open the page whose images you want (they must already be loaded)
-2. Click the ImageConv icon, then **Export all images on this page**
+2. Click the ImageConv icon, then **Batch export images on this page**
 3. A new tab lists every image found, largest first — tick the ones you want
-4. Choose the output format and click **Export selected**
-5. Each image is converted locally and downloaded to the `ImageConv/` folder
+4. Click **Options** to set format, quality, and resize. Everyone can edit these; Pro can also apply or save a preset, edit the file-naming template, and choose **One ZIP archive** under Delivery
+5. Click **Export selected** (the button becomes **Export ZIP** when ZIP delivery is on)
 
-Images smaller than 100 px are hidden by default (icons, avatars, tracking pixels) — adjust the filter in the toolbar. Up to 100 images per run.
+Individual files download to `ImageConv/` using the naming template. ZIP runs download one `ImageConv/<host>-YYYYMMDD-HHmm.zip`; if packaging fails or the archive would exceed 4 GB, completed images are saved individually.
+
+Images smaller than 100 px are hidden by default (icons, avatars, tracking pixels) — adjust the filter in the toolbar. The free plan exports up to 5 images per run; Pro raises the limit to 100.
 
 ### Quality Settings
 
@@ -151,7 +156,7 @@ The **Resize** section in the popup supports scaling by percentage (5%–200%) o
 
 ### HEIC/HEIF (iPhone Photos)
 
-Drop `.heic` / `.heif` files into the popup (or convert a HEIC image link on any webpage) to save them as PNG/JPG/WEBP. Decoding happens entirely locally via WASM — nothing is uploaded.
+Drop or paste `.heic` / `.heif` files into the popup, or right-click a HEIC image displayed on a page, to save it as PNG/JPG/WEBP. Decoding happens entirely locally via WASM — nothing is uploaded. HEIC input is free on every plan.
 
 ---
 
@@ -163,13 +168,10 @@ ImageConv
 ├── Save as JPG (High Quality)
 ├── Save as WEBP (Compact)
 ├── Save as AVIF (Best Compression)
-├── Copy as PNG (Lossless)
-├── Copy as JPG (High Quality)
-├── Copy as WEBP (Compact)
-└── Copy as AVIF (Best Compression)
+└── Copy as PNG (Lossless)
 ```
 
-The **Copy as** and **Save as** menus only appear when right-clicking on images or links that point to image files (`.png`, `.jpg`, `.jpeg`, `.webp`, `.avif`, `.gif`, `.bmp`, `.jfif`, `.svg`).
+The **Save as** and **Copy as PNG** menus only appear when right-clicking an image, including an image inside a link. Plain links to image files do not show the menu. Clipboard output is PNG only.
 
 ---
 
@@ -254,21 +256,25 @@ ImageConv uses an activation-based license system:
 
 ### What's Free vs Paid
 
-| Feature | Free | Premium |
-|---------|:----:|:-------:|
+| Feature | Free | Pro |
+|---------|:----:|:---:|
 | Right-click image conversion (web images) | ✅ | ✅ |
 | Save as PNG / JPG / WEBP / AVIF | ✅ | ✅ |
-| Copy to clipboard | ✅ | ✅ |
+| Copy to clipboard | ✅ PNG only | ✅ PNG only |
 | Quality adjustment sliders | ✅ | ✅ |
 | HEIC/HEIF input (WASM decode) | ✅ | ✅ |
 | Resize (percent / exact pixels) | ✅ | ✅ |
 | Cross-origin image fetch | ✅ | ✅ |
 | Smart link cleaning | ✅ | ✅ |
-| Drag & drop local file conversion | ❌ | ✅ |
-| Batch local file conversion | ❌ | ✅ |
-| Batch export images from a web page | ❌ | ✅ |
+| Drag & drop / paste local files | ✅ Single file | ✅ Single file |
+| Batch local file conversion | Up to 5 per run | Unlimited |
+| Batch export images from a web page | Up to 5 per run | Up to 100 per run |
+| Batch format / quality / resize | ✅ | ✅ |
+| Batch presets | — | ✅ Up to 12 |
+| Filename templates (batch page) | — | ✅ |
+| ZIP archive delivery (batch page) | — | ✅ |
 
-**Summary**: All web image features (right-click save/copy) are **free**. Local file conversion (drag & drop) requires a **premium license**.
+**Summary**: Right-click conversion, single drag & drop/paste, up to 5 images per batch run, and batch format/quality/resize editing are **free**. A **Pro license** removes the local batch cap, raises web exports to 100 per run, and unlocks presets, filename templates, and ZIP delivery.
 
 ---
 

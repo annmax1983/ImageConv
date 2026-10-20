@@ -33,7 +33,7 @@ La plupart des outils de conversion d'images nécessitent d'envoyer vos fichiers
 | 🖼️ **Conversion par clic droit** | Convertissez n'importe quelle image de page web en PNG, JPG, WEBP ou AVIF via le menu contextuel |
 | 📱 **Prise en charge HEIC/HEIF** | Convertissez les photos iPhone directement — glisser-déposer, coller ou clic droit. Décodage local via décodeur WASM intégré |
 | 📐 **Redimensionnement** | Mise à l'échelle en pourcentage ou dimensions exactes en pixels (laisser un champ vide pour conserver les proportions). S'applique aux conversions du popup et du clic droit |
-| 📋 **Copier dans le presse-papiers** | Clic droit → Copier en PNG/JPG/WEBP/AVIF — collez dans vos e-mails, conversations, documents |
+| 📋 **Copier dans le presse-papiers** | Clic droit → Copier en PNG — collez dans vos e-mails, conversations, documents |
 | 📊 **Comparaison de taille** | Une notification affiche la taille originale vs convertie avec le pourcentage d'économie (basé sur les tailles réelles) |
 | 🎚️ **Qualité ajustable** | Réglez finement la qualité d'export pour JPG, WEBP et AVIF via des curseurs dans le popup |
 | 🔗 **Nettoyage intelligent des liens** | Supprime les paramètres de suivi CDN pour récupérer l'image originale |
@@ -42,29 +42,37 @@ La plupart des outils de conversion d'images nécessitent d'envoyer vos fichiers
 | 🛡️ **Remplissage blanc JPG** | Remplit automatiquement les fonds transparents en blanc lors de la conversion PNG → JPG |
 | ⏱️ **Anti-doublon** | Ignore les clics répétés sur la même image dans un intervalle de 2 secondes |
 
-### Fonctionnalités Premium (licence requise)
+### Fonctionnalités Pro (licence requise)
 
 | Fonctionnalité | Description |
 |---------|-------------|
-| ⭐ **Conversion par glisser-déposer** | Déposez ou collez (Ctrl+V) des images locales dans le popup pour une conversion rapide |
-| 📁 **Conversion locale par lot** | Convertissez plusieurs fichiers locaux en une seule fois |
-| 🖼️ **Export web par lots** | Analyse la page ouverte, vous cochez les images voulues et les exportez en une seule passe |
+| ♾️ **Conversion locale par lots illimitée** | Les dépôts multiples gratuits convertissent jusqu'à 5 fichiers par exécution ; Pro supprime la limite locale |
+| 📦 **Exports web volumineux** | Exportez jusqu'à 100 images d'une page en une seule exécution (gratuit : 5) |
+| 🗜️ **Export en archive ZIP** | Regroupez un lot web dans un seul fichier `.zip`. Si l'empaquetage échoue ou si l'archive dépasse 4 Go, les images terminées sont enregistrées individuellement |
+| 🗂️ **Préréglages de lot** | Enregistrez jusqu'à 12 préréglages format/qualité/redimensionnement dans la boîte de dialogue Options du lot et réappliquez-les en un clic |
+| 🏷️ **Modèles de nom de fichier** | Nommez les téléchargements web par lots avec `{name}`, `{index}`, `{format}`, `{date}`, `{width}` et `{height}`. L'extension est ajoutée automatiquement et les collisions reçoivent `-2`, `-3` |
+
+La modification du format, de la qualité et du redimensionnement dans la boîte de dialogue Options du lot reste gratuite. Les préréglages, le nommage des fichiers et la livraison ZIP sont Pro et s'appliquent à la page d'export par lots, pas au glisser-déposer du popup.
 
 ---
 
-## Gratuit vs Premium
+## Gratuit vs Pro
 
-| | Gratuit | Premium |
+| | Gratuit | Pro |
 |---|:---:|:---:|
 | Conversion d'images par clic droit | ✅ | ✅ |
-| Copier dans le presse-papiers | ✅ | ✅ |
+| Copier dans le presse-papiers | ✅ PNG uniquement | ✅ PNG uniquement |
 | Ajustement de la qualité | ✅ | ✅ |
 | Entrée HEIC/HEIF | ✅ | ✅ |
 | Redimensionnement | ✅ | ✅ |
 | Récupération d'images cross-origin | ✅ | ✅ |
-| Conversion locale par glisser-déposer | — | ✅ |
-| Conversion de fichiers locaux par lot | — | ✅ |
-| Exporter les images d'une page web | — | ✅ |
+| Glisser-déposer / coller des images locales | ✅ Fichier unique | ✅ Fichier unique |
+| Conversion de fichiers locaux par lot | Jusqu'à 5 par exécution | Illimitée |
+| Exporter les images d'une page web | Jusqu'à 5 par exécution | Jusqu'à 100 par exécution |
+| Format / qualité / redimensionnement du lot | ✅ | ✅ |
+| Préréglages de lot | — | ✅ Jusqu'à 12 |
+| Modèles de nom de fichier (page de lot) | — | ✅ |
+| Livraison en archive ZIP (page de lot) | — | ✅ |
 
 ---
 
@@ -113,33 +121,29 @@ La plupart des outils de conversion d'images nécessitent d'envoyer vos fichiers
 
 1. Faites un clic droit sur une image dans une page web
 2. Sélectionnez **ImageConv** dans le menu contextuel
-3. Choisissez **Enregistrer sous** ou **Copier sous**
-4. Sélectionnez le format : PNG, JPG, WEBP ou AVIF
-5. C'est fait — le fichier se télécharge instantanément, ou l'image est copiée dans le presse-papiers
+3. Choisissez **Enregistrer sous** (PNG/JPG/WEBP/AVIF) ou **Copier en PNG**
+4. C'est fait — le fichier se télécharge instantanément, ou l'image est copiée dans le presse-papiers en PNG
 
-### Glisser-déposer (Premium)
-
-> ⚠️ Le glisser-déposer est une fonctionnalité Premium. Une clé de licence est requise.
+### Glisser-déposer / Coller (gratuit)
 
 1. Cliquez sur l'icône ImageConv dans votre barre d'outils pour ouvrir le popup
-2. Cliquez sur le bouton 🔑 en haut à droite pour saisir votre clé de licence
-3. Une fois activé, déposez un fichier image local sur la zone de dépôt
-4. Sélectionnez le format cible
-5. Le fichier converti se télécharge automatiquement
+2. Déposez un fichier image local sur la zone de dépôt, ou collez-le avec Ctrl+V
+3. Sélectionnez le format cible
+4. Le fichier converti se télécharge automatiquement
 
-Vous pouvez acheter une clé de licence sur [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv).
+Les images seules sont toujours gratuites. Dans la version gratuite, déposer plusieurs fichiers convertit les 5 premiers ; une licence Pro supprime cette limite par exécution. Les préréglages de lot, les modèles de nom de fichier et la livraison ZIP ne sont disponibles que sur la page d'export par lots web, pas dans le glisser-déposer du popup.
 
-### Export par lots des images web (Premium)
-
-> ⚠️ L'export par lots est une fonctionnalité premium. Une clé de licence est requise.
+### Export par lots des images web (gratuit 5, Pro 100)
 
 1. Ouvrez la page dont vous voulez exporter les images (elles doivent déjà être chargées)
-2. Cliquez sur l'icône ImageConv, puis sur **Exporter toutes les images de cette page**
+2. Cliquez sur l'icône ImageConv, puis sur **Exporter les images de cette page**
 3. Un nouvel onglet liste toutes les images trouvées, de la plus grande à la plus petite — cochez celles voulues
-4. Choisissez le format de sortie et cliquez sur **Exporter la sélection**
-5. Chaque image est convertie localement et téléchargée dans le dossier `ImageConv/`
+4. Cliquez sur **Options** pour définir le format, la qualité et le redimensionnement. Tout le monde peut les modifier ; Pro peut en plus appliquer ou enregistrer un préréglage, modifier le modèle de nom de fichier et choisir **Une archive ZIP** sous Livraison
+5. Cliquez sur **Exporter la sélection** (le bouton devient **Exporter ZIP** lorsque la livraison ZIP est active)
 
-Les images de moins de 100 px sont masquées par défaut (icônes, avatars, pixels de suivi) — ajustez le filtre dans la barre d'outils. Jusqu'à 100 images par passe.
+Les fichiers individuels sont téléchargés dans `ImageConv/` selon le modèle de nom. Les exécutions ZIP téléchargent un `ImageConv/<host>-YYYYMMDD-HHmm.zip` ; si l'empaquetage échoue ou si l'archive dépasse 4 Go, les images terminées sont enregistrées individuellement.
+
+Les images de moins de 100 px sont masquées par défaut (icônes, avatars, pixels de suivi) — ajustez le filtre dans la barre d'outils. La version gratuite exporte jusqu'à 5 images par exécution ; Pro porte la limite à 100.
 
 ### Réglages de qualité
 
@@ -151,7 +155,7 @@ La section **Redimensionner** du popup prend en charge la mise à l'échelle en 
 
 ### HEIC/HEIF (photos iPhone)
 
-Déposez des fichiers `.heic` / `.heif` dans le popup (ou convertissez un lien d'image HEIC sur une page web) pour les enregistrer en PNG/JPG/WEBP. Le décodage s'effectue entièrement en local via WASM — rien n'est envoyé sur les serveurs.
+Déposez ou collez des fichiers `.heic` / `.heif` dans le popup, ou faites un clic droit sur une image HEIC affichée sur une page, pour l'enregistrer en PNG/JPG/WEBP. Le décodage s'effectue entièrement en local via WASM — rien n'est envoyé sur les serveurs. L'entrée HEIC est gratuite dans toutes les versions.
 
 ---
 
@@ -163,13 +167,10 @@ ImageConv
 ├── Enregistrer en JPG (Haute qualité)
 ├── Enregistrer en WEBP (Compact)
 ├── Enregistrer en AVIF (Meilleure compression)
-├── Copier en PNG (Sans perte)
-├── Copier en JPG (Haute qualité)
-├── Copier en WEBP (Compact)
-└── Copier en AVIF (Meilleure compression)
+└── Copier en PNG (Sans perte)
 ```
 
-Les menus **Copier sous** et **Enregistrer sous** n'apparaissent que lors d'un clic droit sur une image ou un lien pointant vers un fichier image (`.png`, `.jpg`, `.jpeg`, `.webp`, `.avif`, `.gif`, `.bmp`, `.jfif`, `.svg`).
+Les menus **Enregistrer sous** et **Copier en PNG** n'apparaissent que lors d'un clic droit sur une image, y compris une image à l'intérieur d'un lien. Les liens simples vers des fichiers image n'affichent pas le menu. La sortie vers le presse-papiers est uniquement en PNG.
 
 ---
 
@@ -254,21 +255,25 @@ ImageConv utilise un système de licence basé sur les activations :
 
 ### Gratuit vs Payant
 
-| Fonctionnalité | Gratuit | Premium |
-|---------|:----:|:-------:|
+| Fonctionnalité | Gratuit | Pro |
+|---------|:----:|:---:|
 | Conversion d'images par clic droit (images web) | ✅ | ✅ |
 | Enregistrer en PNG / JPG / WEBP / AVIF | ✅ | ✅ |
-| Copier dans le presse-papiers | ✅ | ✅ |
+| Copier dans le presse-papiers | ✅ PNG uniquement | ✅ PNG uniquement |
 | Curseurs d'ajustement de qualité | ✅ | ✅ |
 | Entrée HEIC/HEIF (décodage WASM) | ✅ | ✅ |
 | Redimensionnement (pourcentage / pixels) | ✅ | ✅ |
 | Récupération d'images cross-origin | ✅ | ✅ |
 | Nettoyage intelligent des liens | ✅ | ✅ |
-| Conversion locale par glisser-déposer | ❌ | ✅ |
-| Conversion de fichiers locaux par lot | ❌ | ✅ |
-| Exporter les images d'une page web | ❌ | ✅ |
+| Glisser-déposer / coller des fichiers locaux | ✅ Fichier unique | ✅ Fichier unique |
+| Conversion de fichiers locaux par lot | Jusqu'à 5 par exécution | Illimitée |
+| Exporter les images d'une page web | Jusqu'à 5 par exécution | Jusqu'à 100 par exécution |
+| Format / qualité / redimensionnement du lot | ✅ | ✅ |
+| Préréglages de lot | — | ✅ Jusqu'à 12 |
+| Modèles de nom de fichier (page de lot) | — | ✅ |
+| Livraison en archive ZIP (page de lot) | — | ✅ |
 
-**Résumé** : Toutes les fonctionnalités liées aux images web (enregistrer/copier par clic droit) sont **gratuites**. La conversion de fichiers locaux (glisser-déposer) nécessite une **licence Premium**.
+**Résumé** : La conversion par clic droit, le glisser-déposer/collage d'une image seule, jusqu'à 5 images par exécution par lots et la modification format/qualité/redimensionnement dans la boîte de dialogue Options du lot sont **gratuits**. Une **licence Pro** supprime la limite locale par lots (jusqu'à 100 images web par exécution) et débloque les préréglages de lot, les modèles de nom de fichier et la livraison ZIP.
 
 ---
 
