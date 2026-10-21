@@ -66,7 +66,7 @@ Format-, Qualitäts- und Größenbearbeitung im Batch-Dialog „Optionen“ blei
 | HEIC/HEIF-Eingabe | ✅ | ✅ |
 | Größenänderung | ✅ | ✅ |
 | Cross-Origin Bilder laden | ✅ | ✅ |
-| Drag & Drop / Einfügen lokaler Bilder | ✅ Einzeldatei | ✅ Einzeldatei |
+| Drag & Drop / Einfügen lokaler Bilder | ✅ Bis zu 5 Dateien | ✅ Unbegrenzt |
 | Batch-Konvertierung lokaler Dateien | Bis zu 5 pro Durchlauf | Unbegrenzt |
 | Bilder einer Webseite im Stapel exportieren | Bis zu 5 pro Durchlauf | Bis zu 100 pro Durchlauf |
 | Batch-Format / -Qualität / -Größe | ✅ | ✅ |
@@ -265,7 +265,7 @@ ImageConv verwendet ein aktivierungsbasiertes Lizenzsystem:
 | Größenänderung (Prozent / Pixel) | ✅ | ✅ |
 | Cross-Origin Bilder laden | ✅ | ✅ |
 | Intelligentes Link-Cleaning | ✅ | ✅ |
-| Drag & Drop / Einfügen lokaler Dateien | ✅ Einzeldatei | ✅ Einzeldatei |
+| Drag & Drop / Einfügen lokaler Dateien | ✅ Bis zu 5 Dateien | ✅ Unbegrenzt |
 | Batch-Konvertierung lokaler Dateien | Bis zu 5 pro Durchlauf | Unbegrenzt |
 | Bilder einer Webseite im Stapel exportieren | Bis zu 5 pro Durchlauf | Bis zu 100 pro Durchlauf |
 | Batch-Format / -Qualität / -Größe | ✅ | ✅ |

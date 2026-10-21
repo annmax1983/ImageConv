@@ -67,7 +67,7 @@ Format, quality, and resize editing in the batch Options dialog stays free. Pres
 | HEIC/HEIF input | ✅ | ✅ |
 | Resize | ✅ | ✅ |
 | Cross-origin image fetch | ✅ | ✅ |
-| Drag & drop / paste local images | ✅ Single file | ✅ Single file |
+| Drag & drop / paste local images | ✅ Up to 5 files | ✅ Unlimited |
 | Batch local file conversion | Up to 5 per run | Unlimited |
 | Batch export images from a web page | Up to 5 per run | Up to 100 per run |
 | Batch format / quality / resize | ✅ | ✅ |
@@ -266,7 +266,7 @@ ImageConv uses an activation-based license system:
 | Resize (percent / exact pixels) | ✅ | ✅ |
 | Cross-origin image fetch | ✅ | ✅ |
 | Smart link cleaning | ✅ | ✅ |
-| Drag & drop / paste local files | ✅ Single file | ✅ Single file |
+| Drag & drop / paste local files | ✅ Up to 5 files | ✅ Unlimited |
 | Batch local file conversion | Up to 5 per run | Unlimited |
 | Batch export images from a web page | Up to 5 per run | Up to 100 per run |
 | Batch format / quality / resize | ✅ | ✅ |

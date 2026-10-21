@@ -66,7 +66,7 @@ La modification du format, de la qualité et du redimensionnement dans la boîte
 | Entrée HEIC/HEIF | ✅ | ✅ |
 | Redimensionnement | ✅ | ✅ |
 | Récupération d'images cross-origin | ✅ | ✅ |
-| Glisser-déposer / coller des images locales | ✅ Fichier unique | ✅ Fichier unique |
+| Glisser-déposer / coller des images locales | ✅ Jusqu’à 5 fichiers | ✅ Illimité |
 | Conversion de fichiers locaux par lot | Jusqu'à 5 par exécution | Illimitée |
 | Exporter les images d'une page web | Jusqu'à 5 par exécution | Jusqu'à 100 par exécution |
 | Format / qualité / redimensionnement du lot | ✅ | ✅ |
@@ -265,7 +265,7 @@ ImageConv utilise un système de licence basé sur les activations :
 | Redimensionnement (pourcentage / pixels) | ✅ | ✅ |
 | Récupération d'images cross-origin | ✅ | ✅ |
 | Nettoyage intelligent des liens | ✅ | ✅ |
-| Glisser-déposer / coller des fichiers locaux | ✅ Fichier unique | ✅ Fichier unique |
+| Glisser-déposer / coller des fichiers locaux | ✅ Jusqu’à 5 fichiers | ✅ Illimité |
 | Conversion de fichiers locaux par lot | Jusqu'à 5 par exécution | Illimitée |
 | Exporter les images d'une page web | Jusqu'à 5 par exécution | Jusqu'à 100 par exécution |
 | Format / qualité / redimensionnement du lot | ✅ | ✅ |

@@ -66,7 +66,7 @@ La edición de formato, calidad y redimensionado en el diálogo Opciones del lot
 | Entrada HEIC/HEIF | ✅ | ✅ |
 | Redimensionar | ✅ | ✅ |
 | Obtención de imágenes cross-origin | ✅ | ✅ |
-| Arrastrar y soltar / pegar imágenes locales | ✅ Un solo archivo | ✅ Un solo archivo |
+| Arrastrar y soltar / pegar imágenes locales | ✅ Hasta 5 archivos | ✅ Ilimitado |
 | Conversión local por lotes | Hasta 5 por ejecución | Ilimitada |
 | Exportar imágenes de una página web | Hasta 5 por ejecución | Hasta 100 por ejecución |
 | Formato / calidad / redimensionado por lotes | ✅ | ✅ |
@@ -265,7 +265,7 @@ ImageConv utiliza un sistema de licencia basado en activaciones:
 | Redimensionar (porcentaje / píxeles exactos) | ✅ | ✅ |
 | Obtención de imágenes cross-origin | ✅ | ✅ |
 | Limpieza inteligente de enlaces | ✅ | ✅ |
-| Arrastrar y soltar / pegar archivos locales | ✅ Un solo archivo | ✅ Un solo archivo |
+| Arrastrar y soltar / pegar archivos locales | ✅ Hasta 5 archivos | ✅ Ilimitado |
 | Conversión local de archivos por lotes | Hasta 5 por ejecución | Ilimitada |
 | Exportar imágenes de una página web | Hasta 5 por ejecución | Hasta 100 por ejecución |
 | Formato / calidad / redimensionado por lotes | ✅ | ✅ |
