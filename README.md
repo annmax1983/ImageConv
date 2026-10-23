@@ -105,14 +105,12 @@ Format, quality, and resize editing in the batch Options dialog stays free. Pres
 
 ## Installation
 
-### From Source (Developer Mode)
+| Store | Link |
+|---|---|
+| Chrome Web Store | [Install for Chrome](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
+| Microsoft Edge Add-ons | [Install for Edge](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
 
-1. Open your browser's extension page:
-   - **Chrome**: `chrome://extensions/`
-   - **Edge**: `edge://extensions/`
-2. Enable **Developer mode** (top-right toggle)
-3. Click **Load unpacked** and select the `pic-convert` folder
-4. The ✨ ImageConv icon will appear in your toolbar
+> Install only from the official stores above — avoid third-party download sites.
 
 ---
 
@@ -162,14 +160,11 @@ Drop or paste `.heic` / `.heif` files into the popup, or right-click a HEIC imag
 
 ## Context Menu Structure
 
-```
-ImageConv
-├── Save as PNG (Lossless)
-├── Save as JPG (High Quality)
-├── Save as WEBP (Compact)
-├── Save as AVIF (Best Compression)
-└── Copy as PNG (Lossless)
-```
+- Save as PNG (Lossless)
+- Save as JPG (High Quality)
+- Save as WEBP (Compact)
+- Save as AVIF (Best Compression)
+- Copy as PNG (Lossless)
 
 The **Save as** and **Copy as PNG** menus only appear when right-clicking an image, including an image inside a link. Plain links to image files do not show the menu. Clipboard output is PNG only.
 
@@ -190,23 +185,10 @@ ImageConv is built with privacy as a core principle:
 
 ## How It Works
 
-```
-Right-click image
-       ↓
-Service Worker fetches image blob (handles cross-origin)
-       ↓
-Sends blob to Offscreen Document (hidden DOM with Canvas access)
-       ↓
-Canvas draws image at native resolution
-       ↓
-Exports as target format with specified quality
-       ↓
-Returns data URL → triggers download or copies to clipboard
-       ↓
-Destroys all temporary resources (blob, canvas, image element)
-```
-
-> **Why Offscreen?** Chrome's Manifest V3 runs the background as a Service Worker, which has no DOM access. The Canvas API requires a DOM, so we use Chrome's Offscreen API to create a hidden document for image processing.
+1. Right-click an image and choose a target format.
+2. The image is fetched and decoded inside your browser, cross-origin sources included.
+3. It is redrawn at its native resolution and encoded to PNG, JPG, WEBP or AVIF at the quality you set.
+4. The result downloads or lands on your clipboard, and every temporary resource is released immediately.
 
 ---
 

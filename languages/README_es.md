@@ -104,14 +104,12 @@ La edición de formato, calidad y redimensionado en el diálogo Opciones del lot
 
 ## Instalación
 
-### Desde código fuente (modo desarrollador)
+| Tienda | Enlace |
+|---|---|
+| Chrome Web Store | [Instalar en Chrome](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
+| Complementos de Microsoft Edge | [Instalar en Edge](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
 
-1. Abre la página de extensiones de tu navegador:
-   - **Chrome**: `chrome://extensions/`
-   - **Edge**: `edge://extensions/`
-2. Activa el **modo de desarrollador** (interruptor arriba a la derecha)
-3. Haz clic en **Cargar descomprimida** y selecciona la carpeta `pic-convert`
-4. El icono ✨ de ImageConv aparecerá en tu barra de herramientas
+> Instale solo desde las tiendas oficiales de arriba; evite sitios de descarga de terceros.
 
 ---
 
@@ -161,14 +159,11 @@ Arrastra o pega archivos `.heic` / `.heif` en el popup, o haz clic derecho sobre
 
 ## Estructura del menú contextual
 
-```
-ImageConv
-├── Guardar como PNG (Sin pérdida)
-├── Guardar como JPG (Alta calidad)
-├── Guardar como WEBP (Compacto)
-├── Guardar como AVIF (Mejor compresión)
-└── Copiar como PNG (Sin pérdida)
-```
+- Guardar como PNG (Sin pérdida)
+- Guardar como JPG (Alta calidad)
+- Guardar como WEBP (Compacto)
+- Guardar como AVIF (Mejor compresión)
+- Copiar como PNG (Sin pérdida)
 
 Los menús **Guardar como** y **Copiar como PNG** solo aparecen al hacer clic derecho sobre una imagen, incluida una imagen dentro de un enlace. Los enlaces simples a archivos de imagen no muestran el menú. La salida al portapapeles es solo PNG.
 
@@ -189,23 +184,10 @@ ImageConv está construida con la privacidad como principio fundamental:
 
 ## Cómo funciona
 
-```
-Clic derecho en imagen
-       ↓
-El Service Worker obtiene el blob de la imagen (gestiona cross-origin)
-       ↓
-Envía el blob al Offscreen Document (DOM oculto con acceso a Canvas)
-       ↓
-Canvas dibuja la imagen a resolución nativa
-       ↓
-Exporta como formato de destino con la calidad especificada
-       ↓
-Devuelve la URL de datos → lanza la descarga o copia al portapapeles
-       ↓
-Destruye todos los recursos temporales (blob, canvas, elemento de imagen)
-```
-
-> **¿Por qué Offscreen?** El Manifest V3 de Chrome ejecuta el fondo como un Service Worker, que no tiene acceso al DOM. La Canvas API requiere un DOM, así que usamos la Offscreen API de Chrome para crear un documento oculto para el procesamiento de imágenes.
+1. Haz clic derecho en una imagen y elige el formato de destino.
+2. La imagen se obtiene y se decodifica dentro de tu navegador, incluidas las fuentes de otros dominios.
+3. Se redibuja a su resolución nativa y se codifica a PNG, JPG, WEBP o AVIF con la calidad que hayas definido.
+4. El resultado se descarga o va al portapapeles, y todos los recursos temporales se liberan de inmediato.
 
 ---
 

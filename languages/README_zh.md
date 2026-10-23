@@ -106,14 +106,12 @@
 
 ## 安装
 
-### 从源码安装（开发者模式）
+| 商店 | 链接 |
+|---|---|
+| Chrome 应用商店 | [在 Chrome 中安装](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
+| Microsoft Edge 加载项 | [在 Edge 中安装](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
 
-1. 打开浏览器扩展页面：
-   - **Chrome**：`chrome://extensions/`
-   - **Edge**：`edge://extensions/`
-2. 启用**开发者模式**（右上角开关）
-3. 点击**加载已解压的扩展程序**，选择 `pic-convert` 文件夹
-4. 工具栏将出现 ✨ ImageConv 图标
+> 请只通过上方官方商店安装，避免使用第三方下载站。
 
 ---
 
@@ -163,14 +161,11 @@
 
 ## 右键菜单结构
 
-```
-ImageConv
-├── 另存为 PNG（无损）
-├── 另存为 JPG（高质量）
-├── 另存为 WEBP（紧凑）
-├── 另存为 AVIF（最佳压缩）
-└── 复制为 PNG（无损）
-```
+- 另存为 PNG（无损）
+- 另存为 JPG（高质量）
+- 另存为 WEBP（紧凑）
+- 另存为 AVIF（最佳压缩）
+- 复制为 PNG（无损）
 
 **另存为**和**复制为 PNG**菜单仅在右键点击图片时显示，包括链接内的图片；普通图片文件链接不会显示菜单。剪贴板输出仅支持 PNG。
 
@@ -191,23 +186,10 @@ ImageConv 以隐私为核心原则：
 
 ## 工作原理
 
-```
-右键点击图片
-       ↓
-Service Worker 获取图片 Blob（跨域处理）
-       ↓
-将 Blob 发送到离屏文档（具有 Canvas 访问权限的隐藏 DOM）
-       ↓
-Canvas 以原始分辨率绘制图片
-       ↓
-以指定质量导出为目标格式
-       ↓
-返回数据 URL → 触发下载或复制到剪贴板
-       ↓
-销毁所有临时资源（Blob、Canvas、图片元素）
-```
-
-> **为什么使用离屏？** Chrome 的 Manifest V3 将后台作为 Service Worker 运行，没有 DOM 访问权限。Canvas API 需要 DOM，因此我们使用 Chrome 的 Offscreen API 创建隐藏文档进行图片处理。
+1. 右键一张图片，选择目标格式。
+2. 浏览器负责取图并解码，跨域图片同样处理。
+3. 按原始分辨率重绘后，编码为你设定的 PNG / JPG / WEBP / AVIF 格式与质量。
+4. 结果直接下载或送入剪贴板，所有临时资源随即释放。
 
 ---
 

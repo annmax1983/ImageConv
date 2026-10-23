@@ -104,14 +104,12 @@ Format-, Qualitäts- und Größenbearbeitung im Batch-Dialog „Optionen“ blei
 
 ## Installation
 
-### Aus dem Quellcode (Entwicklermodus)
+| Store | Link |
+|---|---|
+| Chrome Web Store | [In Chrome installieren](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
+| Microsoft Edge Add-ons | [In Edge installieren](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
 
-1. Öffne die Erweiterungsseite deines Browsers:
-   - **Chrome**: `chrome://extensions/`
-   - **Edge**: `edge://extensions/`
-2. Aktiviere den **Entwicklermodus** (Schalter oben rechts)
-3. Klicke auf **Entpackte Erweiterung laden** und wähle den Ordner `pic-convert`
-4. Das ✨ ImageConv-Symbol erscheint in deiner Toolbar
+> Installieren Sie nur über die offiziellen Stores oben – meiden Sie Download-Seiten Dritter.
 
 ---
 
@@ -161,14 +159,11 @@ Ziehe `.heic`- / `.heif`-Dateien ins Popup oder füge sie ein, oder klicke mit d
 
 ## Kontextmenü-Struktur
 
-```
-ImageConv
-├── Speichern als PNG (Verlustfrei)
-├── Speichern als JPG (Hohe Qualität)
-├── Speichern als WEBP (Kompakt)
-├── Speichern als AVIF (Beste Kompression)
-└── Kopieren als PNG (Verlustfrei)
-```
+- Speichern als PNG (Verlustfrei)
+- Speichern als JPG (Hohe Qualität)
+- Speichern als WEBP (Kompakt)
+- Speichern als AVIF (Beste Kompression)
+- Kopieren als PNG (Verlustfrei)
 
 Die Menüs **Speichern als** und **Kopieren als PNG** erscheinen nur beim Rechtsklick auf ein Bild, auch auf ein Bild innerhalb eines Links. Reine Links zu Bilddateien zeigen das Menü nicht. Die Zwischenablage-Ausgabe ist nur PNG.
 
@@ -189,23 +184,10 @@ ImageConv wurde mit Datenschutz als Grundprinzip entwickelt:
 
 ## So funktioniert es
 
-```
-Rechtsklick auf Bild
-       ↓
-Service Worker holt Bild-Blob (behandelt Cross-Origin)
-       ↓
-Sendet Blob an Offscreen Document (verstecktes DOM mit Canvas-Zugriff)
-       ↓
-Canvas zeichnet Bild in nativer Auflösung
-       ↓
-Exportiert als Zielformat mit angegebener Qualität
-       ↓
-Gibt Data URL zurück → löst Download aus oder kopiert in Zwischenablage
-       ↓
-Zerstört alle temporären Ressourcen (Blob, Canvas, Image-Element)
-```
-
-> **Warum Offscreen?** Chromes Manifest V3 führt den Hintergrund als Service Worker aus, der keinen DOM-Zugriff hat. Die Canvas API benötigt einen DOM, daher verwenden wir Chromes Offscreen API, um ein verstecktes Dokument für die Bildverarbeitung zu erstellen.
+1. Rechtsklick auf ein Bild und Zielformat wählen.
+2. Das Bild wird in deinem Browser geladen und dekodiert — auch von anderen Websites.
+3. Es wird in Originalauflösung neu aufgebaut und mit der von dir eingestellten Qualität als PNG, JPG, WEBP oder AVIF gespeichert.
+4. Das Ergebnis wird heruntergeladen oder in die Zwischenablage kopiert; alle temporären Ressourcen werden sofort freigegeben.
 
 ---
 

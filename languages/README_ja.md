@@ -104,14 +104,12 @@ PNG・JPG・WEBP・AVIF形式を相互変換できる軽量ブラウザ拡張機
 
 ## インストール
 
-### ソースから（開発者モード）
+| ストア | リンク |
+|---|---|
+| Chrome ウェブストア | [Chrome に追加](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
+| Microsoft Edge アドオン | [Edge に追加](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
 
-1. ブラウザの拡張機能ページを開きます：
-   - **Chrome**: `chrome://extensions/`
-   - **Edge**: `edge://extensions/`
-2. **デベロッパーモード**を有効にします（右上のトグル）
-3. **パッケージ化されていない拡張機能を読み込む**をクリックし、`pic-convert`フォルダを選択します
-4. ツールバーに✨ ImageConvアイコンが表示されます
+> 上記の公式ストアからのみインストールしてください。第三者サイトの利用は避けてください。
 
 ---
 
@@ -161,14 +159,11 @@ PNG・JPG・WEBP・AVIF形式を相互変換できる軽量ブラウザ拡張機
 
 ## コンテキストメニュー構成
 
-```
-ImageConv
-├── PNGとして保存（ロスレス）
-├── JPGとして保存（高品質）
-├── WEBPとして保存（コンパクト）
-├── AVIFとして保存（最高圧縮）
-└── PNGとしてコピー（ロスレス）
-```
+- PNGとして保存（ロスレス）
+- JPGとして保存（高品質）
+- WEBPとして保存（コンパクト）
+- AVIFとして保存（最高圧縮）
+- PNGとしてコピー（ロスレス）
 
 **名前を付けて保存**メニューと**PNGとしてコピー**メニューは、リンク内の画像を含め、画像を右クリックした場合にのみ表示されます。画像ファイルへの単なるリンクではメニューは表示されません。クリップボード出力はPNGのみです。
 
@@ -189,23 +184,10 @@ ImageConvはプライバシーを核となる原則として構築されてい�
 
 ## 動作の仕組み
 
-```
-画像を右クリック
-       ↓
-Service Workerが画像blobを取得（クロスオリジン対応）
-       ↓
-Offscreen Document（Canvasアクセス可能な非表示DOM）にblobを送信
-       ↓
-Canvasがネイティブ解像度で画像を描画
-       ↓
-指定品質でターゲットフォーマットとしてエクスポート
-       ↓
-data URLを返却 → ダウンロードまたはクリップボードコピーを実行
-       ↓
-すべてのリソース（blob、canvas、画像要素）を破棄
-```
-
-> **Offscreenが必要な理由** ChromeのManifest V3ではService Workerとしてバックグラウンドが実行され、DOMアクセスがありません。Canvas APIにはDOMが必要なため、ChromeのOffscreen APIを使用して画像処理用の非表示ドキュメントを作成しています。
+1. 画像を右クリックし、変換先の形式を選びます。
+2. 画像はブラウザ内で取得・デコードされます（クロスオリジンの画像にも対応）。
+3. 元の解像度のまま描き直され、設定した品質で PNG・JPG・WEBP・AVIF にエンコードされます。
+4. 結果はダウンロードされるかクリップボードにコピーされ、変換に使われた一時リソースはすぐに破棄されます。
 
 ---
 

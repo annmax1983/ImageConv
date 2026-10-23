@@ -104,14 +104,12 @@ La modification du format, de la qualité et du redimensionnement dans la boîte
 
 ## Installation
 
-### Depuis les sources (mode développeur)
+| Store | Lien |
+|---|---|
+| Chrome Web Store | [Installer dans Chrome](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
+| Microsoft Edge Add-ons | [Installer dans Edge](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
 
-1. Ouvrez la page des extensions de votre navigateur :
-   - **Chrome** : `chrome://extensions/`
-   - **Edge** : `edge://extensions/`
-2. Activez le **mode Développeur** (bouton en haut à droite)
-3. Cliquez sur **Charger le package décompressé** et sélectionnez le dossier `pic-convert`
-4. L'icône ✨ ImageConv apparaît dans votre barre d'outils
+> Installez uniquement depuis les boutiques officielles ci-dessus — évitez les sites de téléchargement tiers.
 
 ---
 
@@ -161,14 +159,11 @@ Déposez ou collez des fichiers `.heic` / `.heif` dans le popup, ou faites un cl
 
 ## Structure du menu contextuel
 
-```
-ImageConv
-├── Enregistrer en PNG (Sans perte)
-├── Enregistrer en JPG (Haute qualité)
-├── Enregistrer en WEBP (Compact)
-├── Enregistrer en AVIF (Meilleure compression)
-└── Copier en PNG (Sans perte)
-```
+- Enregistrer en PNG (Sans perte)
+- Enregistrer en JPG (Haute qualité)
+- Enregistrer en WEBP (Compact)
+- Enregistrer en AVIF (Meilleure compression)
+- Copier en PNG (Sans perte)
 
 Les menus **Enregistrer sous** et **Copier en PNG** n'apparaissent que lors d'un clic droit sur une image, y compris une image à l'intérieur d'un lien. Les liens simples vers des fichiers image n'affichent pas le menu. La sortie vers le presse-papiers est uniquement en PNG.
 
@@ -189,23 +184,10 @@ ImageConv a été conçu avec la confidentialité comme principe fondamental :
 
 ## Fonctionnement
 
-```
-Clic droit sur une image
-       ↓
-Le Service Worker récupère le blob de l'image (gère le cross-origin)
-       ↓
-Envoie le blob au document Offscreen (DOM caché avec accès Canvas)
-       ↓
-Le Canvas dessine l'image à sa résolution native
-       ↓
-Export au format cible avec la qualité spécifiée
-       ↓
-Renvoie une data URL → déclenche le téléchargement ou copie dans le presse-papiers
-       ↓
-Détruit toutes les ressources temporaires (blob, canvas, élément image)
-```
-
-> **Pourquoi Offscreen ?** Le Manifest V3 de Chrome exécute le Service Worker en arrière-plan, sans accès au DOM. Le Canvas API nécessite un DOM, on utilise donc l'API Offscreen de Chrome pour créer un document caché dédié au traitement des images.
+1. Faites un clic droit sur une image et choisissez le format cible.
+2. L'image est récupérée puis décodée dans votre navigateur, y compris depuis des sources cross-origin.
+3. Elle est reconstruite à sa résolution native, puis encodée en PNG, JPG, WEBP ou AVIF à la qualité que vous avez réglée.
+4. Le résultat se télécharge ou se dépose dans votre presse-papiers, et toutes les ressources temporaires sont libérées aussitôt.
 
 ---
 
