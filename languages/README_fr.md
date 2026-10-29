@@ -4,7 +4,7 @@
 
 Une extension légère qui convertit des images entre les formats PNG, JPG, WEBP et AVIF — entièrement en local, sans aucun envoi de données.
 
-> Chromium · Manifest V3 · Aucun suivi · Traitement 100 % dans le navigateur
+> Chrome / Edge / Firefox · Manifest V3 · Aucun suivi · Traitement 100 % dans le navigateur
 
 ---
 
@@ -95,10 +95,13 @@ La modification du format, de la qualité et du redimensionnement dans la boîte
 |---------|--------|
 | Google Chrome | ✅ Entièrement pris en charge |
 | Microsoft Edge | ✅ Entièrement pris en charge |
+| Mozilla Firefox | ✅ Entièrement pris en charge |
 | Brave | ✅ Pris en charge |
 | Opera | ✅ Pris en charge |
 | Vivaldi | ✅ Pris en charge |
 | Tout navigateur basé sur Chromium | ✅ Pris en charge (Manifest V3) |
+
+> **Note Firefox :** Firefox ne propose pas de document offscreen, le pipeline de conversion s'exécute dans le script d'arrière-plan ; la version Firefox ne demande donc pas la permission `offscreen`. Le reste des fonctions se comporte comme sous Chrome / Edge.
 
 ---
 
@@ -108,6 +111,7 @@ La modification du format, de la qualité et du redimensionnement dans la boîte
 |---|---|
 | Chrome Web Store | [Installer dans Chrome](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
 | Microsoft Edge Add-ons | [Installer dans Edge](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
+| Modules complémentaires Firefox (AMO) | 🔜 En cours d'examen — le lien sera ajouté après publication |
 
 > Installez uniquement depuis les boutiques officielles ci-dessus — évitez les sites de téléchargement tiers.
 
@@ -202,7 +206,7 @@ ImageConv a été conçu avec la confidentialité comme principe fondamental :
 
 Toutes les valeurs de qualité sont ajustables via les curseurs du popup (plage : 10–100).
 
-> ℹ️ L'AVIF est produit par un encodeur WASM intégré (le Canvas de Chromium ne peut pas encoder nativement l'AVIF). Les images trop grandes (plus de 25 mégapixels) sont automatiquement converties en WEBP avec une notification.
+> ℹ️ L'AVIF est produit par un encodeur WASM intégré (le Canvas du navigateur ne peut pas encoder nativement l'AVIF). Les images trop grandes (plus de 25 mégapixels) sont automatiquement converties en WEBP avec une notification.
 
 ---
 
@@ -218,7 +222,7 @@ La fonction de récupération d'images cross-origin est uniquement utilisée pou
 
 ## Avis sur le code source
 
-> ⚠️ **Ce dépôt ne publie pas le code source.** Il contient uniquement la documentation d'utilisation, les notes de version et les ressources d'assistance. L'extension est distribuée exclusivement via le Chrome Web Store. Aucun package d'installation hors ligne ni code source destiné aux utilisateurs finaux n'est fourni.
+> ⚠️ **Ce dépôt ne publie pas le code source.** Il contient uniquement la documentation d'utilisation, les notes de version et les ressources d'assistance. L'extension est distribuée exclusivement via le Chrome Web Store, Microsoft Edge Add-ons et Firefox Add-ons (AMO). Aucun package d'installation hors ligne ni code source destiné aux utilisateurs finaux n'est fourni.
 
 ---
 
@@ -232,7 +236,7 @@ ImageConv utilise un système de licence basé sur les activations :
 
 1. **Achetez** une clé de licence sur [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv)
 2. **Activez** en cliquant sur le bouton 🔑 du popup et en saisissant votre clé
-3. Chaque activation couvre une installation de navigateur ; désactivez une ancienne installation dans le popup pour libérer un emplacement pour une nouvelle
+3. Une licence couvre deux installations de navigateur ; chaque activation en lie une. Désactivez une ancienne installation dans le popup pour libérer cette place pour une nouvelle
 4. La licence est validée en ligne toutes les 2 heures ; si le serveur est injoignable, la licence en cache continue de fonctionner
 
 ### Gratuit vs Payant

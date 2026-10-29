@@ -4,7 +4,7 @@ English | [中文](languages/README_zh.md) | [Español](languages/README_es.md) 
 
 A lightweight browser extension that converts images between PNG, JPG, WEBP, and AVIF formats — entirely locally, with zero data upload.
 
-> Chromium-based · Manifest V3 · No tracking · Fully In-Browser Processing
+> Chrome · Edge · Firefox · Manifest V3 · No tracking · Fully In-Browser Processing
 
 ---
 
@@ -16,7 +16,7 @@ Most image conversion tools require uploading your files to a remote server. Ima
 |-----------|--------|
 | 🔒 **Privacy-First** | All processing happens in your browser's memory. No uploads, no tracking. The only outbound request is optional license validation. |
 | ⚡ **Instant Conversion** | Images ≤5MB convert in under 500ms. No waiting for server round-trips. |
-| 🎯 **Zero Dependencies** | Built with vanilla JavaScript and native Chrome APIs. No frameworks, no bloat. |
+| 🎯 **Zero Dependencies** | Built with vanilla JavaScript and native WebExtension APIs. No frameworks, no bloat. |
 | 🌍 **6 Languages** | Auto-detects your browser language — English, Spanish, German, Japanese, French, Chinese. |
 | 📋 **Copy & Save** | Right-click any image to save as a file OR copy directly to your clipboard. |
 | 📁 **Drag & Drop** | Drop local images onto the popup for quick conversion. |
@@ -37,7 +37,7 @@ Most image conversion tools require uploading your files to a remote server. Ima
 | 📊 **File Size Comparison** | Toast notification shows original vs converted size with savings percentage (based on real file sizes) |
 | 🎚️ **Adjustable Quality** | Fine-tune export quality for JPG, WEBP, and AVIF via sliders in the popup |
 | 🔗 **Smart Link Cleaning** | Strips CDN tracking parameters to fetch original images |
-| 🌐 **Cross-Origin Support** | Fetches images from any website via Service Worker |
+| 🌐 **Cross-Origin Support** | Fetches images from any website through the extension's background context |
 | 🔤 **6-Language i18n** | Context menu and UI auto-match your browser language |
 | 🛡️ **JPG White Fill** | Automatically fills transparent backgrounds with white when converting PNG → JPG |
 | ⏱️ **Duplicate Guard** | Ignores repeated clicks on the same image within 2 seconds |
@@ -92,14 +92,17 @@ Format, quality, and resize editing in the batch Options dialog stays free. Pres
 
 ## Supported Browsers
 
-| Browser | Status |
-|---------|--------|
-| Google Chrome | ✅ Fully supported |
-| Microsoft Edge | ✅ Fully supported |
-| Brave | ✅ Supported |
-| Opera | ✅ Supported |
-| Vivaldi | ✅ Supported |
-| Any Chromium-based browser | ✅ Supported (Manifest V3) |
+| Browser | Status | Notes |
+|---------|--------|-------|
+| Google Chrome | ✅ Fully supported | Manifest V3 |
+| Microsoft Edge | ✅ Fully supported | Manifest V3 |
+| Mozilla Firefox | ✅ Fully supported | Manifest V3, Firefox 140+ (desktop) |
+| Brave | ✅ Supported | Chromium |
+| Opera | ✅ Supported | Chromium |
+| Vivaldi | ✅ Supported | Chromium |
+| Any Chromium-based browser | ✅ Supported | Manifest V3 |
+
+> **Firefox note:** conversion, HEIC decoding, resizing, batch export, presets, filename templates and ZIP delivery all work the same way. Firefox has no `offscreen` document API, so the image pipeline runs in the extension's persistent background script instead — no extra `offscreen` permission is requested on Firefox. Firefox asks for `contextMenus`, `downloads`, `storage`, `scripting`, `clipboardWrite`, `https://api.annmax1983.com/*` (optional license validation) and `<all_urls>` — the same set as Chrome and Edge.
 
 ---
 
@@ -109,6 +112,7 @@ Format, quality, and resize editing in the batch Options dialog stays free. Pres
 |---|---|
 | Chrome Web Store | [Install for Chrome](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
 | Microsoft Edge Add-ons | [Install for Edge](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
+| Firefox Add-ons (AMO) | 🔜 Under review — link will be added once the listing is live |
 
 > Install only from the official stores above — avoid third-party download sites.
 
@@ -179,7 +183,7 @@ ImageConv is built with privacy as a core principle:
 - ✅ **No cookies** — No reading or writing of browser cookies
 - ✅ **No browsing history** — No access to your browsing data
 - ✅ **Temporary memory only** — Images exist in memory during conversion and are immediately destroyed after
-- ✅ **Minimal permissions** — Only what each feature needs: `contextMenus`, `downloads`, `offscreen`, `storage`, `scripting`, `clipboardWrite`, plus `<all_urls>` so the extension can fetch the image you clicked and scan a page for image export
+- ✅ **Minimal permissions** — Only what each feature needs: `contextMenus`, `downloads`, `storage`, `scripting`, `clipboardWrite`, plus `<all_urls>` so the extension can fetch the image you clicked and scan a page for image export. Chrome and Edge additionally use `offscreen` to run the image pipeline in a hidden document; Firefox needs no such permission
 
 ---
 
@@ -203,7 +207,7 @@ ImageConv is built with privacy as a core principle:
 
 All quality values are adjustable via sliders in the popup (range: 10–100).
 
-> ℹ️ AVIF is produced by a built-in WASM encoder (Chromium's Canvas cannot natively encode AVIF). Oversized images (over 25 megapixels) automatically fall back to WEBP with a notice.
+> ℹ️ AVIF is produced by a built-in WASM encoder (no browser's Canvas can natively encode AVIF). Oversized images (over 25 megapixels) automatically fall back to WEBP with a notice.
 
 ---
 
@@ -219,7 +223,7 @@ The cross-origin image fetch function is only used to obtain image resources for
 
 ## Source Code Notice
 
-> ⚠️ **This repository does not publish source code.** It contains only usage documentation, release notes, and support resources. The extension is distributed exclusively through the Chrome Web Store. No offline installation packages or end-user source code are provided.
+> ⚠️ **This repository does not publish source code.** It contains only usage documentation, release notes, and support resources. The extension is distributed exclusively through the Chrome Web Store, Microsoft Edge Add-ons and Firefox Add-ons (AMO). No offline installation packages or end-user source code are provided.
 
 ---
 
@@ -233,7 +237,7 @@ ImageConv uses an activation-based license system:
 
 1. **Purchase** a license key at [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv)
 2. **Activate** by clicking the 🔑 button in the popup and entering your key
-3. Each activation covers one browser installation; deactivate an old installation in the popup to free a slot for a new one
+3. One licence covers two browser installations; each activation binds one. Deactivate an old installation in the popup to free that slot for a new one
 4. License is validated online every 2 hours; if the server is unreachable, the cached license keeps working
 
 ### What's Free vs Paid

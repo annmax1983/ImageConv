@@ -4,7 +4,7 @@
 
 PNG・JPG・WEBP・AVIF形式を相互変換できる軽量ブラウザ拡張機能です。変換はすべてローカルで完結し、データが外部に送信されることはありません。
 
-> Chromium系ブラウザ対応 · Manifest V3 · トラッキングなし · すべてブラウザ内で処理
+> Chrome / Edge / Firefox · Manifest V3 · トラッキングなし · すべてブラウザ内で処理
 
 ---
 
@@ -95,10 +95,13 @@ PNG・JPG・WEBP・AVIF形式を相互変換できる軽量ブラウザ拡張機
 |---------|--------|
 | Google Chrome | ✅ 完全対応 |
 | Microsoft Edge | ✅ 完全対応 |
+| Mozilla Firefox | ✅ 完全対応 |
 | Brave | ✅ 対応 |
 | Opera | ✅ 対応 |
 | Vivaldi | ✅ 対応 |
 | Chromium系ブラウザ全般 | ✅ 対応（Manifest V3） |
+
+> **Firefox について：** Firefox には offscreen ドキュメント API がないため、変換パイプラインは拡張機能のバックグラウンドスクリプトで実行されます。Firefox 版では `offscreen` 権限を要求しません。その他の機能は Chrome / Edge と同じです。
 
 ---
 
@@ -108,6 +111,7 @@ PNG・JPG・WEBP・AVIF形式を相互変換できる軽量ブラウザ拡張機
 |---|---|
 | Chrome ウェブストア | [Chrome に追加](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
 | Microsoft Edge アドオン | [Edge に追加](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
+| Firefox アドオン（AMO） | 🔜 審査中 — 公開後にリンクを追加します |
 
 > 上記の公式ストアからのみインストールしてください。第三者サイトの利用は避けてください。
 
@@ -218,7 +222,7 @@ ImageConvはプライバシーを核となる原則として構築されてい�
 
 ## ソースコードに関する注意
 
-> ⚠️ **このリポジトリにはソースコードは公開されていません。** 使用ドキュメント、リリースノート、サポートリソースのみを含みます。拡張機能はChrome Web Storeを通じてのみ配布されます。オフラインインストールパッケージやエンドユーザー向けソースコードは提供されません。
+> ⚠️ **このリポジトリにはソースコードは公開されていません。** 使用ドキュメント、リリースノート、サポートリソースのみを含みます。拡張機能はChrome Web Store、Microsoft Edgeアドオン、Firefoxアドオン（AMO）を通じてのみ配布されます。オフラインインストールパッケージやエンドユーザー向けソースコードは提供されません。
 
 ---
 
@@ -232,7 +236,7 @@ ImageConvはアクティベーションベースのライセンスシステム�
 
 1. [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv)でライセンスキーを**購入**
 2. ポップアップの🔑ボタンをクリックしてキーを入力し、**有効化**
-3. 1回のアクティベーションで1つのブラウザインストールが対象になります。ポップアップで古いインストールを無効化すると、新しいインストール用の枠が解放されます
+3. 1つのライセンスで2つのブラウザインストールを利用できます。1回のアクティベーションで1つが対象になり、ポップアップで古いインストールを無効化すると枠が解放されます
 4. ライセンスは2時間ごとにオンラインで検証され、サーバーに接続できない場合はキャッシュされたライセンスで引き続き動作します
 
 ### 無料版と有料版の違い

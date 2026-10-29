@@ -4,7 +4,7 @@
 
 Eine schlanke Browser-Erweiterung zum Konvertieren von Bildern zwischen PNG, JPG, WEBP und AVIF — komplett lokal, ohne Datenupload.
 
-> Chromium-basiert · Manifest V3 · Kein Tracking · Verarbeitung vollständig im Browser
+> Chrome / Edge / Firefox · Manifest V3 · Kein Tracking · Verarbeitung vollständig im Browser
 
 ---
 
@@ -95,10 +95,13 @@ Format-, Qualitäts- und Größenbearbeitung im Batch-Dialog „Optionen“ blei
 |---------|--------|
 | Google Chrome | ✅ Vollständig unterstützt |
 | Microsoft Edge | ✅ Vollständig unterstützt |
+| Mozilla Firefox | ✅ Vollständig unterstützt |
 | Brave | ✅ Unterstützt |
 | Opera | ✅ Unterstützt |
 | Vivaldi | ✅ Unterstützt |
 | Jeder Chromium-basierte Browser | ✅ Unterstützt (Manifest V3) |
+
+> **Firefox-Hinweis:** Firefox kennt kein Offscreen-Dokument (offscreen API), daher die Konvertierungs-Pipeline im Hintergrundskript der Erweiterung läuft; die Berechtigung `offscreen` wird in der Firefox-Version nicht angefordert. Die übrigen Funktionen verhalten sich wie unter Chrome / Edge.
 
 ---
 
@@ -108,6 +111,7 @@ Format-, Qualitäts- und Größenbearbeitung im Batch-Dialog „Optionen“ blei
 |---|---|
 | Chrome Web Store | [In Chrome installieren](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
 | Microsoft Edge Add-ons | [In Edge installieren](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
+| Firefox-Add-ons (AMO) | 🔜 In Prüfung – Link folgt nach der Freigabe |
 
 > Installieren Sie nur über die offiziellen Stores oben – meiden Sie Download-Seiten Dritter.
 
@@ -218,7 +222,7 @@ Die Cross-Origin-Bildlade-Funktion dient ausschließlich dem Abruf von Bildresso
 
 ## Quellcode-Hinweis
 
-> ⚠️ **Dieses Repository veröffentlicht keinen Quellcode.** Es enthält nur Nutzerdokumentation, Versionshinweise und Support-Ressourcen. Die Erweiterung wird ausschließlich über den Chrome Web Store vertrieben. Es werden keine Offline-Installationspakete oder Endbenutzer-Quellcodes bereitgestellt.
+> ⚠️ **Dieses Repository veröffentlicht keinen Quellcode.** Es enthält nur Nutzerdokumentation, Versionshinweise und Support-Ressourcen. Die Erweiterung wird ausschließlich über den Chrome Web Store, Microsoft Edge Add-ons und Firefox-Add-ons (AMO) vertrieben. Es werden keine Offline-Installationspakete oder Endbenutzer-Quellcodes bereitgestellt.
 
 ---
 
@@ -232,7 +236,7 @@ ImageConv verwendet ein aktivierungsbasiertes Lizenzsystem:
 
 1. **Kauf** eines Lizenzschlüssels unter [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv)
 2. **Aktivierung** durch Klick auf die 🔑-Taste im Popup und Eingabe deines Schlüssels
-3. Jede Aktivierung gilt für eine Browser-Installation; deaktiviere eine alte Installation im Popup, um einen Platz für eine neue freizugeben
+3. Eine Lizenz gilt für zwei Browser-Installationen; jede Aktivierung bindet eine davon. Deaktiviere eine alte Installation im Popup, um den Platz für eine neue freizugeben
 4. Die Lizenz wird alle 2 Stunden online validiert; ist der Server nicht erreichbar, funktioniert die gecachte Lizenz weiter
 
 ### Was ist kostenlos vs. kostenpflichtig?

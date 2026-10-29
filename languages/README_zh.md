@@ -4,7 +4,7 @@
 
 一款轻量级浏览器扩展，可在本地将图片转换为 PNG、JPG、WEBP 和 AVIF 格式 —— 本地处理，无数据上传。
 
-> 基于 Chromium · Manifest V3 · 无追踪 · 100% 浏览器内处理
+> Chrome / Edge / Firefox · Manifest V3 · 无追踪 · 100% 浏览器内处理
 
 ---
 
@@ -97,10 +97,13 @@
 |--------|------|
 | Google Chrome | ✅ 完全支持 |
 | Microsoft Edge | ✅ 完全支持 |
+| Mozilla Firefox | ✅ 完全支持 |
 | Brave | ✅ 支持 |
 | Opera | ✅ 支持 |
 | Vivaldi | ✅ 支持 |
 | 任意 Chromium 内核浏览器 | ✅ 支持（Manifest V3） |
+
+> **Firefox 说明：** Firefox 没有 offscreen 文档 API，转换管线在扩展的后台脚本中运行，因此 Firefox 版不申请 `offscreen` 权限。其余功能与 Chrome / Edge 一致。
 
 ---
 
@@ -110,6 +113,7 @@
 |---|---|
 | Chrome 应用商店 | [在 Chrome 中安装](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
 | Microsoft Edge 加载项 | [在 Edge 中安装](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
+| Firefox 附加组件（AMO） | 🔜 审核中，上架后补充链接 |
 
 > 请只通过上方官方商店安装，避免使用第三方下载站。
 
@@ -220,7 +224,7 @@ ImageConv 以隐私为核心原则：
 
 ## 源码说明
 
-> ⚠️ **此处不发布源码。** 本仓库仅提供使用说明、更新日志和留言支持服务。扩展程序仅通过 Chrome Web Store 分发，不提供离线安装包或终端用户源代码。
+> ⚠️ **此处不发布源码。** 本仓库仅提供使用说明、更新日志和留言支持服务。扩展程序仅通过 Chrome Web Store、Microsoft Edge Add-ons 与 Firefox 附加组件（AMO） 分发，不提供离线安装包或终端用户源代码。
 
 ---
 
@@ -234,7 +238,7 @@ ImageConv 采用基于激活的许可系统：
 
 1. 在 [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv) **购买**许可证密钥
 2. 在弹窗中点击 🔑 按钮**激活**并输入密钥
-3. 一次激活对应一个浏览器安装；在弹窗中解绑旧安装即可释放名额
+3. 一个许可证可激活两台浏览器；每次激活绑定一个浏览器安装，在弹窗中解绑旧安装即可释放该名额
 4. 每 2 小时在线校验一次；服务器不可达时，缓存授权将继续可用
 
 ### 免费与 Pro 对照
@@ -270,4 +274,3 @@ ImageConv 采用基于激活的许可系统：
 **[🌐 官方网站](https://www.annmax1983.com/extensions/imageconv)**
 
 ---
-
