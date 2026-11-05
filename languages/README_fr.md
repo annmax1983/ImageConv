@@ -111,7 +111,7 @@ La modification du format, de la qualité et du redimensionnement dans la boîte
 |---|---|
 | Chrome Web Store | [Installer dans Chrome](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
 | Microsoft Edge Add-ons | [Installer dans Edge](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
-| Modules complémentaires Firefox (AMO) | 🔜 En cours d'examen — le lien sera ajouté après publication |
+| Modules complémentaires Firefox (AMO) | [Installer pour Firefox](https://addons.mozilla.org/firefox/addon/imageconv-image-converter/) |
 
 > Installez uniquement depuis les boutiques officielles ci-dessus — évitez les sites de téléchargement tiers.
 
@@ -234,7 +234,7 @@ Copyright © 2026 ImageConv. Tous droits réservés.
 
 ImageConv utilise un système de licence basé sur les activations :
 
-1. **Achetez** une clé de licence sur [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv)
+1. **Achetez** une clé de licence sur [annmax1983.com](https://annmax1983.com/checkout?plugin=imageconv)
 2. **Activez** en cliquant sur le bouton 🔑 du popup et en saisissant votre clé
 3. Une licence couvre deux installations de navigateur ; chaque activation en lie une. Désactivez une ancienne installation dans le popup pour libérer cette place pour une nouvelle
 4. La licence est validée en ligne toutes les 2 heures ; si le serveur est injoignable, la licence en cache continue de fonctionner

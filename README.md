@@ -112,7 +112,7 @@ Format, quality, and resize editing in the batch Options dialog stays free. Pres
 |---|---|
 | Chrome Web Store | [Install for Chrome](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
 | Microsoft Edge Add-ons | [Install for Edge](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
-| Firefox Add-ons (AMO) | 🔜 Under review — link will be added once the listing is live |
+| Firefox Add-ons (AMO) | [Install for Firefox](https://addons.mozilla.org/firefox/addon/imageconv-image-converter/) |
 
 > Install only from the official stores above — avoid third-party download sites.
 
@@ -235,7 +235,7 @@ Copyright © 2026 ImageConv. All rights reserved.
 
 ImageConv uses an activation-based license system:
 
-1. **Purchase** a license key at [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv)
+1. **Purchase** a license key at [annmax1983.com](https://annmax1983.com/checkout?plugin=imageconv)
 2. **Activate** by clicking the 🔑 button in the popup and entering your key
 3. One licence covers two browser installations; each activation binds one. Deactivate an old installation in the popup to free that slot for a new one
 4. License is validated online every 2 hours; if the server is unreachable, the cached license keeps working
@@ -274,3 +274,12 @@ If you find ImageConv helpful, consider supporting the project!
 
 ---
 
+---
+
+## Links
+
+- **Official website:** https://annmax1983.com/
+- **This extension:** https://annmax1983.com/extensions/imageconv
+- **Privacy policy:** https://annmax1983.com/privacy
+- **Contact:** support@annmax1983.com
+- **☕ Support this project (Ko-fi):** https://ko-fi.com/annmax?ref=imageconv

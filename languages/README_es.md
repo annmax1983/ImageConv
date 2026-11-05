@@ -111,7 +111,7 @@ La edición de formato, calidad y redimensionado en el diálogo Opciones del lot
 |---|---|
 | Chrome Web Store | [Instalar en Chrome](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
 | Complementos de Microsoft Edge | [Instalar en Edge](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
-| Complementos de Firefox (AMO) | 🔜 En revisión: el enlace se añadirá al publicarse |
+| Complementos de Firefox (AMO) | [Instalar para Firefox](https://addons.mozilla.org/firefox/addon/imageconv-image-converter/) |
 
 > Instale solo desde las tiendas oficiales de arriba; evite sitios de descarga de terceros.
 
@@ -234,7 +234,7 @@ Copyright © 2026 ImageConv. Todos los derechos reservados.
 
 ImageConv utiliza un sistema de licencia basado en activaciones:
 
-1. **Compra** una clave de licencia en [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv)
+1. **Compra** una clave de licencia en [annmax1983.com](https://annmax1983.com/checkout?plugin=imageconv)
 2. **Activa** haciendo clic en el botón 🔑 del popup e introduciendo tu clave
 3. Una licencia cubre dos instalaciones de navegador; cada activación vincula una de ellas. Desactiva una instalación antigua en el popup para liberar ese espacio para una nueva
 4. La licencia se valida online cada 2 horas; si no se puede alcanzar el servidor, la licencia en caché sigue funcionando

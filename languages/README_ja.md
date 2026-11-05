@@ -111,7 +111,7 @@ PNG・JPG・WEBP・AVIF形式を相互変換できる軽量ブラウザ拡張機
 |---|---|
 | Chrome ウェブストア | [Chrome に追加](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
 | Microsoft Edge アドオン | [Edge に追加](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
-| Firefox アドオン（AMO） | 🔜 審査中 — 公開後にリンクを追加します |
+| Firefox アドオン（AMO） | [Firefox 版をインストール](https://addons.mozilla.org/firefox/addon/imageconv-image-converter/) |
 
 > 上記の公式ストアからのみインストールしてください。第三者サイトの利用は避けてください。
 
@@ -234,7 +234,7 @@ Copyright © 2026 ImageConv. All rights reserved.
 
 ImageConvはアクティベーションベースのライセンスシステムを採用しています：
 
-1. [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv)でライセンスキーを**購入**
+1. [annmax1983.com](https://annmax1983.com/checkout?plugin=imageconv)でライセンスキーを**購入**
 2. ポップアップの🔑ボタンをクリックしてキーを入力し、**有効化**
 3. 1つのライセンスで2つのブラウザインストールを利用できます。1回のアクティベーションで1つが対象になり、ポップアップで古いインストールを無効化すると枠が解放されます
 4. ライセンスは2時間ごとにオンラインで検証され、サーバーに接続できない場合はキャッシュされたライセンスで引き続き動作します

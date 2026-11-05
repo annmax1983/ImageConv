@@ -113,7 +113,7 @@
 |---|---|
 | Chrome 应用商店 | [在 Chrome 中安装](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
 | Microsoft Edge 加载项 | [在 Edge 中安装](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
-| Firefox 附加组件（AMO） | 🔜 审核中，上架后补充链接 |
+| Firefox 附加组件（AMO） | [安装 Firefox 版](https://addons.mozilla.org/firefox/addon/imageconv-image-converter/) |
 
 > 请只通过上方官方商店安装，避免使用第三方下载站。
 
@@ -236,7 +236,7 @@ Copyright © 2026 ImageConv. 保留所有权利。
 
 ImageConv 采用基于激活的许可系统：
 
-1. 在 [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv) **购买**许可证密钥
+1. 在 [annmax1983.com](https://annmax1983.com/checkout?plugin=imageconv) **购买**许可证密钥
 2. 在弹窗中点击 🔑 按钮**激活**并输入密钥
 3. 一个许可证可激活两台浏览器；每次激活绑定一个浏览器安装，在弹窗中解绑旧安装即可释放该名额
 4. 每 2 小时在线校验一次；服务器不可达时，缓存授权将继续可用

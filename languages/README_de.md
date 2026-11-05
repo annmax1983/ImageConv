@@ -111,7 +111,7 @@ Format-, Qualitäts- und Größenbearbeitung im Batch-Dialog „Optionen“ blei
 |---|---|
 | Chrome Web Store | [In Chrome installieren](https://chromewebstore.google.com/detail/jfeigfbfnciialfkdfjeofmkhofidehp) |
 | Microsoft Edge Add-ons | [In Edge installieren](https://microsoftedge.microsoft.com/addons/detail/fdjbckphkemnkgljgoongejilpepjpbp) |
-| Firefox-Add-ons (AMO) | 🔜 In Prüfung – Link folgt nach der Freigabe |
+| Firefox-Add-ons (AMO) | [Für Firefox installieren](https://addons.mozilla.org/firefox/addon/imageconv-image-converter/) |
 
 > Installieren Sie nur über die offiziellen Stores oben – meiden Sie Download-Seiten Dritter.
 
@@ -234,7 +234,7 @@ Copyright © 2026 ImageConv. Alle Rechte vorbehalten.
 
 ImageConv verwendet ein aktivierungsbasiertes Lizenzsystem:
 
-1. **Kauf** eines Lizenzschlüssels unter [annmax1983.com](https://www.annmax1983.com/checkout.html?plugin=imageconv)
+1. **Kauf** eines Lizenzschlüssels unter [annmax1983.com](https://annmax1983.com/checkout?plugin=imageconv)
 2. **Aktivierung** durch Klick auf die 🔑-Taste im Popup und Eingabe deines Schlüssels
 3. Eine Lizenz gilt für zwei Browser-Installationen; jede Aktivierung bindet eine davon. Deaktiviere eine alte Installation im Popup, um den Platz für eine neue freizugeben
 4. Die Lizenz wird alle 2 Stunden online validiert; ist der Server nicht erreichbar, funktioniert die gecachte Lizenz weiter
