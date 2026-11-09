@@ -223,13 +223,17 @@ The cross-origin image fetch function is only used to obtain image resources for
 
 ## Source Code Notice
 
-> ⚠️ **This repository does not publish source code.** It contains only usage documentation, release notes, and support resources. The extension is distributed exclusively through the Chrome Web Store, Microsoft Edge Add-ons and Firefox Add-ons (AMO). No offline installation packages or end-user source code are provided.
+> ⚠️ **This repository is for project showcase only — the full source code is not published here.** It contains the user documentation, release notes and support information for the extension.
+
+> 📥 **Download and install only from the official browser stores:** Chrome Web Store · Microsoft Edge Add-ons · Firefox Add-ons (AMO). No offline installation package is distributed from this repository.
 
 ---
 
 ## License
 
 Copyright © 2026 ImageConv. All rights reserved.
+
+This software is proprietary and closed-source. Without prior written authorization from the author, decompiling, reverse-engineering, cracking, modifying, repackaging, redistributing or reselling the program (in whole or in part) is strictly prohibited.
 
 ### How Licensing Works
 
@@ -271,8 +275,6 @@ If you find ImageConv helpful, consider supporting the project!
 **[👉 Support on Ko-fi](https://ko-fi.com/annmax?ref=imageconv)**
 
 **[🌐 Official Website](https://www.annmax1983.com/extensions/imageconv)**
-
----
 
 ---
 
